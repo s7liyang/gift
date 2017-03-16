@@ -1,0 +1,29 @@
+@import '../../../node_modules/tsp-util/lib/scss/vendor';
+@import '../../../node_modules/tsp-util/lib/scss/mixins';
+
+html {
+  font-size: 14 / 375 * 100vw;
+}
+
+body{
+  font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,sans-serif;
+}
+
+a[x-apple-data-detectors-type="telephone"] {
+  color: inherit;
+}
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 14 / 375 * 100vw !important;
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 14 / 375 * 100vw !important;
+  }
+}

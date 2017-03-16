@@ -1,0 +1,19 @@
+
+# node.js
+node_modules/
+npm-debug.log
+
+**/.history
+**/node_modules
+
+node_modules.zip
+sh.exe.stackdump
+src/fis-conf.js
+build
+assert
+*.log
+*.log.*
+.idea
+asn1
+output
+huatianweb

@@ -1,0 +1,27 @@
+{
+  "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": [1, "never"], // 不对数组或对象末尾逗号做强制要求
+    "spaced-comment": [0, "always"], // 不对注释前的空格做强制要求
+    "func-names": 0, // 允许使用匿名函数
+    "linebreak-style": ["error", "windows"],
+    "max-len": [1, 140],
+    "prefer-arrow-callback": [0],
+    "no-plusplus": 0,
+    "no-mixed-operators": 0,
+    "no-param-reassign": 0,
+    "operator-assignment": 0,
+    "no-case-declarations": 0,
+    "class-methods-use-this": 0,
+    "radix": 0,
+    "object-curly-spacing": 0
+  },
+  "globals": {
+    "$": true,
+    "Swiper": true,
+    "document": true,
+    "echarts": true,
+    "BMap": true
+  }
+}
