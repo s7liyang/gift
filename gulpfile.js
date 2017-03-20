@@ -72,6 +72,11 @@ function addCommonCss() {
     .pipe(gulp.dest('./output/assert/css'));
 }
 
+function addFonts() {
+  return gulp.src('./src/res/fonts/*.*', { base: './src/res/fonts' })
+    .pipe(gulp.dest('./output/assert/fonts'));
+}
+
 function html() {
   return gulp.src('./src/page/**/*.html')
     .pipe(gulpif(env === 'dev', changed('./output', { extension: '.html' })))
@@ -107,6 +112,10 @@ function watch() {
       addCommonCss
     ))
   );
+  gulp.watch('./src/res/fonts/*.*', gulp.parallel(gulp.series(
+      addFonts
+    ))
+  );
 }
 
 gulp.task('webpack', shell.task([
@@ -121,6 +130,7 @@ gulp.task('dev', gulp.series(
   scssCompile,
   addCommonJs,
   addCommonCss,
+  addFonts,
   watch
 ));
 
@@ -132,6 +142,7 @@ gulp.task('build', gulp.series(
   html,
   outputHtml,
   addCommonCss,
+  addFonts,
   addCommonJs
   // 'webpack'
 ));
