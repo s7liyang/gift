@@ -10,7 +10,7 @@ header{
     .inputbox{
         display: inline-block;
         height: 100%;
-        width: rem(660);
+        width: rem(650);
         vertical-align: middle;
         padding-left: rem(20);
         border-radius: rem(36);
@@ -18,6 +18,7 @@ header{
         input{
            height: 100%;
            width: rem(580);
+           vertical-align: middle;
            border: none;
            outline: none;
         }
@@ -38,7 +39,201 @@ header{
 .swiper-pagination-bullet{
     background-color: #FFFFFF;
 }
+.swiper-pagination-bullet-active{
+    background-color: #E4393C;
+}
+// 分类菜单
+.menubox{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    margin-top: rem(88);
+    .fenlei{
+        border-top: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fff;
+        padding: rem(40);
+        .item{
+            width: 25%;
+            margin-bottom: rem(30);
+            text-align: center;
+            font-size: rem(24);
+            color: #535353;
+            i{
+                font-size: rem(46);
+                color: #535353;
+                margin-bottom: rem(10);
+            }
+        }
+    }
+}
 
+// 4句标语
+.slogan{
+    padding: rem(30);
+    display: flex;
+    .item{
+        width: 25%;
+        text-align: center;
+        font-size: rem(26);
+        color: #535353;
+        img{
+            width: rem(70);
+            margin-bottom: rem(10);
+        }
+    }
+}
+//4张图片  index-test
+.index-test{
+    padding: rem(20) rem(20) rem(40) 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    a{
+        display: block;
+        padding: rem(20) 0 0 rem(20);
+        width: 50%;
+        img{
+            width: 100%;
+        }
+    }
+}
+//人气新品
+.index-news{
+    padding: rem(30) 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    .news-span1{
+        display: inline-block;
+        font-size: rem(52);
+        color: #5c5c5c;
+        border-bottom: .01rem solid #5c5c5c;
+    }
+    .news-span2{
+        display: inline-block;
+        font-size: rem(24);
+        color: #303030;
+    }
+}
+.newslist{
+    padding-left: rem(10);
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    a{
+        display: block;
+        background-color: #f4f4f4;
+        padding-right: rem(10);
+    }
+    .full{
+        width: 100%;
+        img{width: 100%}
+    }
+    .half{
+        width: 50%;
+        img{width: 100%}
+    }
+}
+// 分类礼物展示
+.list-title{
+    padding: rem(32);
+    background-color: #f4f4f4;
+    font-size: rem(30);
+    color: #5c5c5c;
+    a{
+        float: right;
+        .cir{
+            display: inline-block;
+            width:rem(10);
+            height: rem(10);
+            border-radius: 50%;
+            background: #cab8a2;
+            margin: 0 .02rem;
+            vertical-align: middle;
+        }
+    }
+}
+.list{
+    padding-left: rem(10);
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    a{
+        display: block;
+        background-color: #f4f4f4;
+        padding-right: rem(10);
+    }
+    .full{
+        width: 100%;
+        img{width: 100%}
+    }
+    .half{
+        width: 50%;
+        img{width: 100%}
+    }
+}
+
+
+// 页面信息
+.web-info{
+    padding:rem(10) rem(60);
+    margin-bottom: rem(100);
+    .contact{
+        display: flex;
+        padding: rem(30) 0;
+        .left{
+            width: 60%;
+            i{
+                font-size: rem(50);
+                color: #535353;
+            }
+            b{
+                font-size: rem(30);
+                color: #535353;
+            }
+            p{
+                font-size: rem(26);
+                color: #535353;
+                margin: rem(20) 0;
+            }
+        }
+        .right{
+             width: 40%;
+             height: rem(100);
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             border: 1px solid #535353;
+             border-radius: rem(50);
+             font-size: rem(30);
+             color: #535353;
+        }
+    }
+    .links{
+        display: flex;
+        a{
+            display: block;
+            width: 25%;
+            padding: rem(20) 0;
+            font-size: rem(26);
+            color: #535353;
+            text-align: center;
+        }
+    }
+    >p{
+        font-size: rem(24);
+        color: #535353;
+        text-align: center;
+        margin: rem(10) 0;
+    }
+}
+
+//底部标签栏
 footer{
     height: rem(100);
     width: 100%;
@@ -52,14 +247,14 @@ footer{
         padding-top: rem(10);
         flex: 1;
         text-align: center;
-        font-size: 12px;
+        font-size: rem(24);
         color: #999999;
         >div{
             vertical-align: middle;
         }
         .icon{
             height: 50%;
-            font-size: 16px;
+            font-size: rem(32);
         }
     }
     .active{
