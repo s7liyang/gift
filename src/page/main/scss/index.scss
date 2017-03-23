@@ -1,156 +1,159 @@
-// index
-header{
-    height: rem(88);
-    padding: rem(16) rem(20);
-    background-color: #F7F7F7;
-    .menu{
-        color: #A09B9B;
-        margin-right: rem(10);
-    }
-    .inputbox{
-        display: inline-block;
-        height: 100%;
-        width: rem(650);
-        vertical-align: middle;
-        padding-left: rem(20);
-        border-radius: rem(36);
-        background-color: #fff;
-        input{
-           height: 100%;
-           width: rem(580);
-           vertical-align: middle;
-           border: none;
-           outline: none;
-        }
-        i{
-            color: #A09B9B;
-        }
-    }
+.content{
+  padding-bottom: rem(70);
 }
-
+// 头部搜索栏
+.bar-nav{
+  .searchbar{
+    background-color: #f7f7f8;
+    margin-left: rem(50);
+    padding-left: 0;
+    .button{
+      top:0;
+    }
+  }
+}
+// 礼品分类
+.panel-left{
+  .content-block{
+    margin: 0;
+    padding: 0;
+  }
+  background-color: #fff;
+  .menutitle{
+    text-align: center;
+  }
+  // 分类item
+  .menubox{
+      width: 100%;
+      .fenlei{
+          border-top: 2px solid #eee;
+          padding: rem(30) 0;
+          display: flex;
+          flex-wrap: wrap;
+          background-color: #fff;
+          .item{
+              width: 33.333%;
+              margin-bottom: rem(30);
+              text-align: center;
+              font-size: rem(16);
+              color: #535353;
+              i{
+                  font-size: rem(40);
+                  color: #535353;
+                  margin-bottom: rem(10);
+              }
+          }
+      }
+  }
+  .closebtn{
+    padding: 0 rem(25);
+    bottom: rem(50);
+  }
+}
+// 轮播图
 .swiper-container{
+     padding-bottom: 0;
     .swiper-slide{
         img{
            width: 100%;
-           height: rem(400);
+           height: rem(266.66);
         }
     }
 }
 .swiper-pagination-bullet{
     background-color: #FFFFFF;
 }
+.swiper-pagination{
+  position: absolute;
+}
+.swiper-container-horizontal>.swiper-pagination {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 .swiper-pagination-bullet-active{
     background-color: #E4393C;
 }
-// 分类菜单
-.menubox{
-    display: none;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-    margin-top: rem(88);
-    .fenlei{
-        border-top: 2px solid #eee;
-        border-bottom: 2px solid #eee;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #fff;
-        padding: rem(40);
-        .item{
-            width: 25%;
-            margin-bottom: rem(30);
-            text-align: center;
-            font-size: rem(24);
-            color: #535353;
-            i{
-                font-size: rem(46);
-                color: #535353;
-                margin-bottom: rem(10);
-            }
-        }
-    }
-}
-
 // 4句标语
-.slogan{
-    padding: rem(30);
+.biaoyu{
+    padding: rem(20) rem(5);
     display: flex;
-    .item{
+    background-color: #fff;
+    .biaoyu-item{
         width: 25%;
         text-align: center;
-        font-size: rem(26);
+        font-size: rem(18);
         color: #535353;
         img{
-            width: rem(70);
-            margin-bottom: rem(10);
+            width: rem(60);
+            margin-bottom: rem(6);
         }
     }
 }
 //4张图片  index-test
 .index-test{
-    padding: rem(20) rem(20) rem(40) 0;
-    background-color: #f9f9f9;
+    padding: rem(10) rem(10) rem(10) 0;
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     a{
         display: block;
-        padding: rem(20) 0 0 rem(20);
+        padding: rem(10) 0 0 rem(10);
         width: 50%;
         img{
+            display: block;
             width: 100%;
         }
     }
 }
 //人气新品
 .index-news{
-    padding: rem(30) 0;
+    padding: rem(20) 0;
     background-color: #f4f4f4;
     text-align: center;
     .news-span1{
         display: inline-block;
-        font-size: rem(52);
+        font-size: rem(36);
         color: #5c5c5c;
         border-bottom: .01rem solid #5c5c5c;
     }
     .news-span2{
         display: inline-block;
-        font-size: rem(24);
+        font-size: rem(16);
         color: #303030;
     }
 }
 .newslist{
-    padding-left: rem(10);
     background-color: #f4f4f4;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     a{
         display: block;
         background-color: #f4f4f4;
-        padding-right: rem(10);
+        margin-bottom: rem(6);
     }
     .full{
         width: 100%;
-        img{width: 100%}
+        img{width: 100%;display: block;}
     }
     .half{
-        width: 50%;
-        img{width: 100%}
+        width: 49.5%;
+        img{width: 100%;display: block;}
     }
 }
 // 分类礼物展示
 .list-title{
-    padding: rem(32);
+    padding: rem(22);
     background-color: #f4f4f4;
-    font-size: rem(30);
+    font-size: rem(20);
     color: #5c5c5c;
     a{
         float: right;
         .cir{
             display: inline-block;
-            width:rem(10);
-            height: rem(10);
+            width:rem(6);
+            height: rem(6);
             border-radius: 50%;
             background: #cab8a2;
             margin: 0 .02rem;
@@ -159,58 +162,62 @@ header{
     }
 }
 .list{
-    padding-left: rem(10);
     background-color: #f4f4f4;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     a{
         display: block;
-        background-color: #f4f4f4;
-        padding-right: rem(10);
+        background-color: #fff;
+        margin-bottom: rem(4);
     }
     .full{
         width: 100%;
-        img{width: 100%}
+        img{width: 100%;display: block;}
     }
     .half{
-        width: 50%;
-        img{width: 100%}
+        width: 49.5%;
+        padding: rem(14);
+        img{width: 100%;display: block;}
+        font-size: rem(17);
+        color: #585B5A;
+        text-align: center;
+        .price{color: #d93732;}
+        p{margin:rem(6) 0;}
     }
 }
-
-
 // 页面信息
 .web-info{
-    padding:rem(10) rem(60);
-    margin-bottom: rem(100);
+    padding:rem(6) rem(30) rem(6) rem(40);
     .contact{
         display: flex;
-        padding: rem(30) 0;
+        align-items: center;
+        padding: rem(18) 0;
         .left{
             width: 60%;
             i{
-                font-size: rem(50);
+                font-size: rem(34);
                 color: #535353;
             }
             b{
-                font-size: rem(30);
+                font-size: rem(24);
                 color: #535353;
             }
             p{
-                font-size: rem(26);
+                font-size: rem(18);
                 color: #535353;
-                margin: rem(20) 0;
+                margin: rem(14) 0;
             }
         }
         .right{
              width: 40%;
-             height: rem(100);
+             height: rem(70);
              display: flex;
              align-items: center;
              justify-content: center;
              border: 1px solid #535353;
              border-radius: rem(50);
-             font-size: rem(30);
+             font-size: rem(20);
              color: #535353;
         }
     }
@@ -219,45 +226,16 @@ header{
         a{
             display: block;
             width: 25%;
-            padding: rem(20) 0;
-            font-size: rem(26);
+            padding: rem(10) 0;
+            font-size: rem(18);
             color: #535353;
             text-align: center;
         }
     }
     >p{
-        font-size: rem(24);
+        font-size: rem(16);
         color: #535353;
         text-align: center;
         margin: rem(10) 0;
-    }
-}
-
-//底部标签栏
-footer{
-    height: rem(100);
-    width: 100%;
-    background-color: #eee;
-    border-top: 1px solid #ccc;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    .item{
-        padding-top: rem(10);
-        flex: 1;
-        text-align: center;
-        font-size: rem(24);
-        color: #999999;
-        >div{
-            vertical-align: middle;
-        }
-        .icon{
-            height: 50%;
-            font-size: rem(32);
-        }
-    }
-    .active{
-        color: #FF6D0D;
     }
 }

@@ -6,224 +6,317 @@
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>礼品屋</title>
     <link rel="stylesheet" href="/assert/css/common.css">
+    <link rel="stylesheet" href="/assert/css/sm.min.css">
+    <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
     <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assert/css/swiper-3.4.0.min.css">
     <link rel="stylesheet" href="/assert/css/index.css">
 </head>
 <body>
-    <header>
-        <i class="menu fa fa-navicon" id="menu"></i>
-        <div class="inputbox">
-            <input type="" name="" value="" placeholder="搜索礼物">
-            <i class="fa fa-search"></i>
-        </div>
-    </header>
-    <!--swiper最外层-->
-    <div class="swiper-container">   
-        <!--swiper轮播页-->
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="#"><img src="/assert/img/swiper1.jpg" width="100%"></a>
+  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+  <div class="page-group">
+    <!-- 单个page ,第一个.page默认被展示-->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="icon icon-menu pull-left open-panel"></a>
+            <div class="searchbar row">
+                <div class="search-input col-85">
+                <input type="search" id='search' placeholder='搜索礼物...'/>
+                </div>
+                <a class="button button-fill button-primary col-15"><span class="icon icon-search"></span></a>
             </div>
-            <div class="swiper-slide">
-                <a href="#"><img src="/assert/img/s.jpg" width="100%"></a>
+        </header>
+        
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <!--swiper最外层-->
+            <div class="swiper-container">   
+                <!--swiper轮播页-->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/assert/img/swiper1.jpg" width="100%"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/assert/img/s.jpg" width="100%"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/assert/img/swiper3.jpg" width="100%"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/assert/img/b.jpg" width="100%"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/assert/img/swiper5.jpg" width="100%"></a>
+                    </div>
+                </div>
+                <!--分页器-->
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-slide">
-                <a href="#"><img src="/assert/img/swiper3.jpg" width="100%"></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="#"><img src="/assert/img/b.jpg" width="100%"></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="#"><img src="/assert/img/swiper5.jpg" width="100%"></a>
-            </div>
-        </div>
-        <!--分页器-->
-        <div class="swiper-pagination"></div>
-	</div>
-    <!--商品分类-->
-    <div class="menubox" id="menubox">
-        <div class="fenlei">
-            <div class="item">
-                <i class="fa fa-female" aria-hidden="true"></i></br>
-                少女心饰
-            </div>
-            <div class="item">
-                <i class="fa fa-umbrella"></i></br>
-                萌萌美物
-            </div>
-            <div class="item">
-                <i class="fa fa-venus-mars"></i></br>
-                为爱停留
-            </div>
-            <div class="item">
-                <i class="fa fa-glass"></i></br>
-                潮流时尚
-            </div>
-            <div class="item">
-                <i class="fa fa-camera"></i></br>
-                科技达人
-            </div>
-            <div class="item">
-                <i class="fa fa-magnet"></i></br>
-                幸福烙印
-            </div>
-            <div class="item">
-                <i class="fa fa-thermometer-0"></i></br>
-                爱情保鲜
-            </div>
-            <div class="item">
-                <i class="fa fa-bullhorn"></i></br>
-                新品上架
-            </div>
-            <div class="item">
-                <i class="fa fa-birthday-cake"></i></br>
-                生日礼物
-            </div>
-            <div class="item">
-                <i class="fa fa-rocket"></i></br>
-                创意礼物
-            </div>
-            <div class="item">
-                <i class="fa fa-gift"></i></br>
-                愚人节礼物
-            </div>
-        </div>
-    </div>
-    <!--4句标语-->
-    <div class="slogan">
-        <div class="item">
-            <img src="/assert/img/slogan1.png"></br>
-            专属定制
-        </div>
-        <div class="item">
-            <img src="/assert/img/slogan2.png"></br>
-            激光镭雕
-        </div>
-        <div class="item">
-            <img src="/assert/img/slogan3.png"></br>
-            代写贺卡
-        </div>
-        <div class="item">
-            <img src="/assert/img/slogan4.png"></br>
-            精心设计
-        </div>
-    </div>
-    <!--4张图片-->
-    <div class="index-test">
-        <a href="javascript:;"><img src="/assert/img/index_test01.png"></a>
-        <a href="javascript:;"><img src="/assert/img/index_test02.png"></a>
-        <a href="javascript:;"><img src="/assert/img/index_test03.png"></a>
-        <a href="javascript:;"><img src="/assert/img/index_test04.png"></a>
-    </div>
-    <!--人气新品-->
-    <div class="index-news">
-        <span class="news-span1">人气新品</span><br>
-        <span class="news-span2">新品出炉  快来尝鲜!</span>
-    </div>
-    <div class="newslist">
-        <a class="full" href="javascript:;"><img src="/assert/img/news1.jpg" alt=""></a>
-        <a class="half" href="javascript:;"><img src="/assert/img/news2.jpg" alt=""></a>
-        <a class="half" href="javascript:;"><img src="/assert/img/news3.jpg" alt=""></a>
-        <a class="full" href="javascript:;"><img src="/assert/img/news4.jpg" alt=""></a>
-        <a class="half" href="javascript:;"><img src="/assert/img/news5.jpg" alt=""></a>
-        <a class="half" href="javascript:;"><img src="/assert/img/news6.jpg" alt=""></a>
-    </div>
-    <!--生日礼物-->
-    <div class="list-title">
-        <span class="tile">生日礼物</span> 
-        <a href="javascript:;" class="">
-            <i class="cir"></i>
-            <i class="cir"></i>
-            <i class="cir"></i>
-        </a> 
-    </div>
-    <div class="list">
-        <a class="full" href="javascript:;"><img src="/assert/img/news1.jpg" alt=""></a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-        <a class="half" href="javascript:;">
-            <img src="/assert/img/news1.jpg" alt="">
-            <p class="name">商品名称</p>
-            <p class="price">￥ 128.00</p>
-        </a>
-    </div>
 
-    <!--创意礼物-->
-    <div class="list-title">
-        <span class="title">创意礼物</span> 
-        <a href="javascript:;" class="more">
-            <i class="cir"></i>
-            <i class="cir"></i>
-            <i class="cir"></i>
-        </a>
-    </div>
-    <div class="list">
+            <!--4句标语-->
+            <div class="biaoyu">
+                <div class="biaoyu-item">
+                    <img src="/assert/img/slogan1.png"></br>
+                    专属定制
+                </div>
+                <div class="biaoyu-item">
+                    <img src="/assert/img/slogan2.png"></br>
+                    激光镭雕
+                </div>
+                <div class="biaoyu-item">
+                    <img src="/assert/img/slogan3.png"></br>
+                    代写贺卡
+                </div>
+                <div class="biaoyu-item">
+                    <img src="/assert/img/slogan4.png"></br>
+                    精心设计
+                </div>
+            </div>
+            <!--4张图片-->
+            <div class="index-test">
+                <a href="#"><img src="/assert/img/index_test01.png"></a>
+                <a href="#"><img src="/assert/img/index_test02.png"></a>
+                <a href="#"><img src="/assert/img/index_test03.png"></a>
+                <a href="#"><img src="/assert/img/index_test04.png"></a>
+            </div>
+            <!--人气新品-->
+            <div class="index-news">
+                <span class="news-span1">人气新品</span><br>
+                <span class="news-span2">新品出炉  快来尝鲜!</span>
+            </div>
+            <div class="newslist">
+                <a class="full" href="#"><img src="/assert/img/news1.jpg" alt=""></a>
+                <a class="half" href="#"><img src="/assert/img/news2.jpg" alt=""></a>
+                <a class="half" href="#"><img src="/assert/img/news3.jpg" alt=""></a>
+                <a class="full" href="#"><img src="/assert/img/news4.jpg" alt=""></a>
+                <a class="half" href="#"><img src="/assert/img/news5.jpg" alt=""></a>
+                <a class="half" href="#"><img src="/assert/img/news6.jpg" alt=""></a>
+            </div>
 
-    </div>
-    <!--页面信息-->
-    <div class="web-info">
-        <div class="contact">
-            <div class="left">
-                <i class="fa fa-phone"></i>
-                <b class="telnum">400-611-2156</b>
-                <p class="time">周一至周日 8:00-24:00</p>
+            <!--生日礼物-->
+            <div class="list-title">
+                <span class="tile">生日礼物</span> 
+                <a href="#" class="">
+                    <i class="cir"></i>
+                    <i class="cir"></i>
+                    <i class="cir"></i>
+                </a> 
             </div>
-            <div class="right">
-                QQ在线交谈
+            <div class="list">
+                <a class="full" href="#"><img src="/assert/img/birth1.jpg" alt=""></a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth2.jpg" alt="">
+                    <p class="name">酷玩音乐台灯</p>
+                    <p class="price">￥79.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth3.jpg" alt="">
+                    <p class="name">爱的旋律</p>
+                    <p class="price">￥97.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth4.jpg" alt="">
+                    <p class="name">花儿朵朵开</p>
+                    <p class="price">￥138.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth5.jpg" alt="">
+                    <p class="name">温暖你星窝</p>
+                    <p class="price">￥98.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth6.jpg" alt="">
+                    <p class="name">男神风范</p>
+                    <p class="price">￥199.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth7.jpg" alt="">
+                    <p class="name">神烦狗</p>
+                    <p class="price">￥98.00</p>
+                </a>
+            </div>
+
+            <!--创意礼物-->
+            <div class="list-title">
+                <span class="tile">创意礼物</span>
+                <a href="#" class="">
+                    <i class="cir"></i>
+                    <i class="cir"></i>
+                    <i class="cir"></i>
+                </a> 
+            </div>
+            <div class="list">
+                <a class="full" href="#"><img src="/assert/img/birth1.jpg" alt=""></a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth2.jpg" alt="">
+                    <p class="name">酷玩音乐台灯</p>
+                    <p class="price">￥79.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth3.jpg" alt="">
+                    <p class="name">爱的旋律</p>
+                    <p class="price">￥97.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth4.jpg" alt="">
+                    <p class="name">花儿朵朵开</p>
+                    <p class="price">￥138.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth5.jpg" alt="">
+                    <p class="name">温暖你星窝</p>
+                    <p class="price">￥98.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth6.jpg" alt="">
+                    <p class="name">男神风范</p>
+                    <p class="price">￥199.00</p>
+                </a>
+                <a class="half" href="#">
+                    <img src="/assert/img/birth7.jpg" alt="">
+                    <p class="name">神烦狗</p>
+                    <p class="price">￥98.00</p>
+                </a>
+            </div>
+
+            <!--页面信息-->
+            <div class="web-info">
+                <div class="contact">
+                    <div class="left">
+                        <i class="fa fa-phone"></i>
+                        <b class="telnum">400-023-1234</b>
+                        <p class="time">周一至周五 9:00-18:00</p>
+                    </div>
+                    <div class="right">
+                        QQ在线交谈
+                    </div>
+                </div>
+                <div class="links">
+                <a href="#" class="open-about">关于礼品屋</a>
+                <a href="#" class="open-express">快递查询</a>
+                <a href="#" class="open-help">帮助信息</a>
+                <a href="#" class="open-return">退换货政策</a>
+                </div>
+                <p class="copyright">© 2017 gift.com, all rights reserved</p>
+            </div>
+
+        </div>
+
+        <!-- 工具栏 -->
+        <nav class="bar bar-tab">
+            <a class="tab-item external active" href="index.html" data-no-cache="true">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item external" href="game.html">
+                <span class="icon icon-gift"></span>
+                <span class="tab-label">猜心</span>
+            </a>
+            <a class="tab-item external" href="cart.html">
+                <span class="icon icon-cart"></span>
+                <span class="tab-label">购物车</span>
+            </a>
+            <a class="tab-item external" href="me.html">
+                <span class="icon icon-me"></span>
+                <span class="tab-label">我的</span>
+            </a>
+        </nav>
+    </div>
+  </div>
+  <!-- popup, panel 等放在这里 -->
+  <!-- 关于 -->
+  <div class="popup popup-about">
+    <div class="content-block">
+        <p>关于礼品屋。。。</p>
+        <p><a href="#" class="close-popup button button-light">再见</a></p>
+        <p>coming soon ...</p>
+    </div>
+  </div>
+  <!-- 快递 -->
+  <div class="popup popup-express">
+    <div class="content-block">
+        <p>快递查询。。。</p>
+        <p><a href="#" class="close-popup button button-light">再见</a></p>
+        <p>coming soon ...</p>
+    </div>
+  </div>
+  <!-- 帮助 -->
+  <div class="popup popup-help">
+    <div class="content-block">
+        <p>帮助信息。。。</p>
+        <p><a href="#" class="close-popup button button-light">再见</a></p>
+        <p>coming soon ...</p>
+    </div>
+  </div>
+  <!-- 退货 -->
+  <div class="popup popup-return">
+    <div class="content-block">
+        <p>退换货政策。。。</p>
+        <p><a href="#" class="close-popup button button-light">再见</a></p>
+        <p>coming soon ...</p>
+    </div>
+  </div>
+    
+  <!-- Left Panel with Reveal effect -->
+  <div class="panel panel-left panel-reveal">
+    <div class="content-block">
+        <p class="menutitle">礼品分类</p>
+        <!--分类菜单-->
+        <div class="menubox" id="menubox">
+            <div class="fenlei">
+                <div class="item">
+                    <i class="fa fa-female" aria-hidden="true"></i></br>
+                    少女心饰
+                </div>
+                <div class="item">
+                    <i class="fa fa-umbrella"></i></br>
+                    萌萌美物
+                </div>
+                <div class="item">
+                    <i class="fa fa-venus-mars"></i></br>
+                    为爱停留
+                </div>
+                <div class="item">
+                    <i class="fa fa-glass"></i></br>
+                    潮流时尚
+                </div>
+                <div class="item">
+                    <i class="fa fa-camera"></i></br>
+                    科技达人
+                </div>
+                <div class="item">
+                    <i class="fa fa-magnet"></i></br>
+                    幸福烙印
+                </div>
+                <div class="item">
+                    <i class="fa fa-thermometer-0"></i></br>
+                    爱情保鲜
+                </div>
+                <div class="item">
+                    <i class="fa fa-bullhorn"></i></br>
+                    新品上架
+                </div>
+                <div class="item">
+                    <i class="fa fa-birthday-cake"></i></br>
+                    生日礼物
+                </div>
+                <div class="item">
+                    <i class="fa fa-rocket"></i></br>
+                    创意礼物
+                </div>
+                <div class="item">
+                    <i class="fa fa-gift"></i></br>
+                    愚人节
+                </div>
             </div>
         </div>
-        <div class="links">
-           <a href="javascript:;">关于礼品屋</a>
-           <a href="javascript:;">快递查询</a>
-           <a href="javascript:;">帮助信息</a>
-           <a href="javascript:;">退换货政策</a>
-        </div>
-        <p class="copyright">© 2017 gift.com, all rights reserved</p>
+        <p class="closebtn"><a href="#" class="close-panel button button-light">关闭</a></p>
     </div>
-    <footer>
-        <div class="item active">
-            <div class="icon"><i class="fa fa-home"></i></div>
-            <div>首页</div>
-        </div>
-        <div class="item">
-            <div class="icon"><i class="fa fa-heart"></i></div>
-            <div>猜心</div>
-        </div>
-        <div class="item">
-            <div class="icon"><i class="fa fa-shopping-cart"></i></div>
-            <div>购物车</div>
-        </div>
-        <div class="item">
-            <div class="icon"><i class="fa fa-user-o"></i></div>
-            <div>我的</div>
-        </div>
-    </footer>
-    <script src="/assert/js/jquery-1.8.2.min.js"></script>
-	<script src="/assert/js/swiper-3.4.0.min.js"></script>
-	<script src='/assert/js/index.js'></script>
+  </div>
+
+  <script src="/assert/js/zepto.min.js"></script>
+  <script src='/assert/js/sm.min.js'></script>
+  <script src='/assert/js/sm-extend.min.js'></script>
+  <script src="/assert/js/index.js"></script>
 </body>
 </html>

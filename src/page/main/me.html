@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>礼品屋</title>
+    <link rel="stylesheet" href="/assert/css/common.css">
+    <link rel="stylesheet" href="/assert/css/sm.min.css">
+    <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
+    <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assert/css/me.css">
+</head>
+<body>
+  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+  <div class="page-group">
+      <!-- 单个page ,第一个.page默认被展示-->
+      <div class="page">
+          <!-- 标题栏 -->
+          <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left external" href="index.html">
+                <span class="icon icon-left" style="margin-top: -4px;"></span>
+                返回
+              </a>
+              <h1 class="title">我的</h1>
+          </header>
+
+          <!-- 工具栏 -->
+        <nav class="bar bar-tab">
+            <a class="tab-item external" href="index.html">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item external" href="game.html">
+                <span class="icon icon-gift"></span>
+                <span class="tab-label">猜心</span>
+            </a>
+            <a class="tab-item external" href="cart.html">
+                <span class="icon icon-cart"></span>
+                <span class="tab-label">购物车</span>
+            </a>
+            <a class="tab-item external active" href="me.html" data-no-cache="true">
+                <span class="icon icon-me"></span>
+                <span class="tab-label">我的</span>
+            </a>
+        </nav>
+
+          <!-- 这里是页面内容区 -->
+          <div class="content">
+              <div class="content-block">我的</div>
+          </div>
+      </div>
+
+      <!-- 其他的单个page内联页（如果有） -->
+      <div class="page">...</div>
+
+  </div>
+  <script src="/assert/js/zepto.min.js"></script>
+  <script src='/assert/js/sm.min.js'></script>
+  <script src='/assert/js/sm-extend.min.js'></script>
+  <script src="/assert/js/me.js"></script>
+</body>
+</html>
