@@ -15,7 +15,7 @@
   <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
   <div class="page-group">
     <!-- 单个page ,第一个.page默认被展示-->
-    <div class="page">
+    <div class="page page-current">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
             <a class="icon icon-menu pull-left open-panel"></a>
@@ -187,15 +187,15 @@
                         <b class="telnum">400-023-1234</b>
                         <p class="time">周一至周五 9:00-18:00</p>
                     </div>
-                    <div class="right">
+                    <div class="right open-popup">
                         QQ在线交谈
                     </div>
                 </div>
                 <div class="links">
-                <a href="#" class="open-about">关于礼品屋</a>
-                <a href="#" class="open-express">快递查询</a>
-                <a href="#" class="open-help">帮助信息</a>
-                <a href="#" class="open-return">退换货政策</a>
+                <a href="#page-about">关于礼品屋</a>
+                <a href="#page-express" >快递查询</a>
+                <a href="#page-help" >帮助信息</a>
+                <a href="#page-retreat" >退换货政策</a>
                 </div>
                 <p class="copyright">© 2017 gift.com, all rights reserved</p>
             </div>
@@ -210,7 +210,7 @@
             </a>
             <a class="tab-item external" href="game.html">
                 <span class="icon icon-gift"></span>
-                <span class="tab-label">猜心</span>
+                <span class="tab-label">发现</span>
             </a>
             <a class="tab-item external" href="cart.html">
                 <span class="icon icon-cart"></span>
@@ -222,40 +222,76 @@
             </a>
         </nav>
     </div>
-  </div>
-  <!-- popup, panel 等放在这里 -->
-  <!-- 关于 -->
-  <div class="popup popup-about">
-    <div class="content-block">
-        <p>关于礼品屋。。。</p>
-        <p><a href="#" class="close-popup button button-light">再见</a></p>
-        <p>coming soon ...</p>
+
+    <!-- 其他的单个page内联页（如果有） -->
+    <div class="page" id="page-about">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left external" href="index.html">
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">关于礼品屋</h1>
+        </header>
+        <div class="content">
+            <p>你的一份小礼，TA或许会开心数月！</p>
+            <p>在这个物欲横流的时代，让创意点亮生活，真情感动你我，传递我们心中的那份爱。</p>
+        </div>
     </div>
-  </div>
-  <!-- 快递 -->
-  <div class="popup popup-express">
-    <div class="content-block">
-        <p>快递查询。。。</p>
-        <p><a href="#" class="close-popup button button-light">再见</a></p>
-        <p>coming soon ...</p>
+    <div class="page" id="page-express">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left external" href="index.html">
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">快递查询</h1>
+        </header>
+        <div class="content">
+            <p>不同的快递方式，覆盖范围和送达时间稍有不同，快递配送过程有人为不可控因素，个别情况下会跟以上时间稍有出入。</p>
+        </div>
     </div>
-  </div>
-  <!-- 帮助 -->
-  <div class="popup popup-help">
-    <div class="content-block">
-        <p>帮助信息。。。</p>
-        <p><a href="#" class="close-popup button button-light">再见</a></p>
-        <p>coming soon ...</p>
+    <div class="page" id="page-help">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left external" href="index.html">
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">帮助信息</h1>
+        </header>
+        <div class="content">
+            <p>常见问题FAQ</p>
+        </div>
     </div>
-  </div>
-  <!-- 退货 -->
-  <div class="popup popup-return">
-    <div class="content-block">
-        <p>退换货政策。。。</p>
-        <p><a href="#" class="close-popup button button-light">再见</a></p>
-        <p>coming soon ...</p>
+    <div class="page" id="page-retreat">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left external" href="index.html">
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">退换货政策</h1>
+        </header>
+        <div class="content">
+            <p>退换货流程</p>
+            <p>如需退换货，请您在退换货前联系客服告知退换货的订单号、礼品名称、退货原因，我们的客服将会为您办理退货。
+                收到发票的请准备好发票，退货时需将发票一并退回。</p>
+        </div>
     </div>
+
+    <!-- QQ在线交谈弹窗 -->
+    <div class="popup popup-qq">
+    <div class="content-block">
+        <p>QQ在线交谈弹窗。。。</p>
+        <p>Lorem ipsum dolor ...</p>
+        </br>
+        <p><a href="#" class="button button-light close-popup">关 闭</a></p>
+    </div>
+    </div>
+
   </div>
+  
     
   <!-- Left Panel with Reveal effect -->
   <div class="panel panel-left panel-reveal">

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>礼品屋</title>
+    <link rel="stylesheet" href="/assert/css/common.css">
+    <link rel="stylesheet" href="/assert/css/sm.min.css">
+    <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
+    <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+  <div class="page-group">
+      <!-- 单个page ,第一个.page默认被展示-->
+      <div class="page .page-current" id="page-login">
+          <!-- 标题栏 -->
+          <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left" href="">
+                <span class="icon icon-left" style="margin-top: -4px;"></span>
+                返回
+              </a>
+              <h1 class="title">登录</h1>
+              <a class="button button-link button-nav pull-right" href="#page-register">
+                注册
+                <span class="icon icon-right" style="margin-top: -4px;"></span>
+              </a>
+          </header>
+
+          <!-- 这里是页面内容区 -->
+          <div class="content">
+              <div class="list-block">
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">用户名</div>
+                            <div class="item-input">
+                            <input type="text" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">密码</div>
+                            <div class="item-input">
+                            <input type="password" placeholder="请输入密码" class="">
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    <!-- Switch (Checkbox) -->
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">记住密码</div>
+                            <div class="item-input">
+                            <label class="label-switch">
+                                <input type="checkbox">
+                                <div class="checkbox"></div>
+                            </label>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-100"><a href="#" class="button button-big button-fill button-success">登 录</a></div>
+                </div>
+            </div>
+
+          </div>
+      </div>
+      <!-- 其他的单个page内联页（注册页面） -->
+      <div class="page" id="page-register">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="">
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">注册</h1>
+            <a class="button button-link button-nav pull-right" href="#page-login">
+            登录
+            <span class="icon icon-right" style="margin-top: -4px;"></span>
+            </a>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="list-block">
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">用户名</div>
+                            <div class="item-input">
+                            <input type="text" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">密码</div>
+                            <div class="item-input">
+                            <input type="password" placeholder="请输入密码" class="">
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    <!-- Switch (Checkbox) -->
+                    <li>
+                        <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                            <input type="checkbox" checked="checked">
+                            注册即视为同意 <a href="javascript:void(0)">《礼品屋用户注册协议》</a>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-100"><a href="#" class="button button-big button-fill button-warning">注 册</a></div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <script src="/assert/js/zepto.min.js"></script>
+  <script src='/assert/js/sm.min.js'></script>
+  <script src='/assert/js/sm-extend.min.js'></script>
+</body>
+</html>
