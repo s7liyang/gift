@@ -1,0 +1,19 @@
+.list{
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a{
+        display: block;
+        background-color: #fff;
+        margin-bottom: rem(4);
+        width: 49.5%;
+        padding: rem(14);
+        img{width: 100%;display: block;}
+        font-size: rem(17);
+        color: #585B5A;
+        text-align: center;
+        .price{color: #d93732;}
+        p{margin:rem(6) 0;}
+    }
+}
