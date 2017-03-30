@@ -9,6 +9,9 @@ const enterJs = {
   cart: path.resolve(__dirname, '../page/main/js/cart.js'),
   details: path.resolve(__dirname, '../page/main/js/details.js'),
   list: path.resolve(__dirname, '../page/main/js/list.js'),
+  order: path.resolve(__dirname, '../page/main/js/order.js'),
+  login: path.resolve(__dirname, '../page/main/js/login.js'),
+  coupon: path.resolve(__dirname, '../page/main/js/coupon.js'),
 };
 
 module.exports = enterJs;

@@ -103,3 +103,78 @@ body,.page-group,.page-group.page-current, .page.page-current{
   }
 }
 /*自定义的属性*/
+
+// page-feedback内联页面
+.coupon-feedback__body {
+  display: flex;
+  padding: rem(12);
+  background: #f2f2f2;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.feedback__phone {
+  display: flex;
+  padding: 0 rem(10);
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: rem(16);
+  width: 100%;
+  height: rem(80);
+  background: #fff;  
+  box-shadow: 0px 1px #e6e6e6;
+}
+.feedback__phone--text{
+  margin-right: rem(16);
+  font-size: rem(20);
+  color: #353633;
+  letter-spacing: rem(2);
+  font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+}
+
+.feedback__input--text{
+  color: #b9b9b9;
+  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+  font-size: rem(20);
+  border: none;
+  flex: 1;
+}
+
+.feedback--text{
+  display: block;
+  margin: rem(26) 0 rem(22) rem(10);
+  align-self: flex-start;  
+  color: #353633;
+  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+  font-size: rem(20);
+}
+
+.feedback__content {
+  width: 100%;
+  background: #fff;
+  resize: none;
+  border: 1px solid #e6e6e6;  
+  border-radius: rem(16);
+  box-shadow: 0px 1px #e6e6e6;
+  color: #b9b9b9;
+  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+  font-size: rem(20);
+  padding-top: rem(12);
+  height: rem(384);  
+  text-indent: rem(20);
+}
+
+.coupon-feedback--submit {
+  margin-top: rem(24);
+  width: rem(240);
+  height: rem(60);
+  color: #fff;
+  background-color: #dbbb69;
+  border-radius: rem(30);
+  border: none;
+  font-size: rem(20);
+  font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+}

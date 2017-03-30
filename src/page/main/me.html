@@ -15,7 +15,7 @@
   <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
   <div class="page-group">
       <!-- 单个page ,第一个.page默认被展示-->
-      <div class="page">
+      <div class="page page-current">
           <!-- 标题栏 -->
           <header class="bar bar-nav">
               <h1 class="title">我的</h1>
@@ -51,18 +51,19 @@
             </div>
             <div class="tab">
                 <div class="first_tab">
-                    我的订单
+                    <a href="order.html" external>我的订单</a>
                 </div>
                 <div class="middle_tab">
-                    我的钱包
+                    <a href="login.html#page-purse">我的钱包</a>
                 </div>
                 <div class="last_tab">
-                    退出
+                    <a href="login.html" external>退出</a>
                 </div>
             </div>
             <!--sui插件-->
             <div class="list-block">
                 <ul>
+                    <a href="coupon.html" external>
                     <li class="item-content item-link">
                         <div class="item-media"><i class="icon icon-f7"></i></div>
                         <div class="item-inner">
@@ -70,6 +71,7 @@
                         <div class="item-after"></div>
                         </div>
                     </li>
+                    </a>
                 </ul>
             </div>
             <!--sui插件-->
@@ -77,6 +79,7 @@
             <!--sui插件-->
             <div class="list-block">
                 <ul>
+                <a href="login.html#page-personalData">
                 <li class="item-content item-link">
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
@@ -84,6 +87,8 @@
                     <div class="item-after"></div>
                     </div>
                 </li>
+                </a>
+                <a href="login.html#page-newPassword">
                 <li class="item-content item-link">
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
@@ -91,6 +96,8 @@
                     <div class="item-after"></div>
                     </div>
                 </li>
+                </a>
+                <a href="login.html#page-address">
                 <li class="item-content item-link">
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
@@ -98,6 +105,7 @@
                     <div class="item-after"></div>
                     </div>
                 </li>
+                </a>
                 <li class="item-content">
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
@@ -105,6 +113,7 @@
                     <div class="item-after">023-66664567</div>
                     </div>
                 </li>
+                <a href="#page-feedback">
                 <li class="item-content item-link">
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
@@ -112,15 +121,35 @@
                     <div class="item-after"></div>
                     </div>
                 </li>
+                </a>
                 </ul>
             </div>
             <!--sui插件-->
           </div>
       </div>
 
-      <!-- 其他的单个page内联页（如果有） -->
-      <div class="page">...</div>
-
+      <!-- 其他的单个page内联页（问题反馈） -->
+      <div class="page" id="page-feedback">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
+            <span class="icon icon-left" style="margin-top: -4px;"></span>
+            返回
+            </a>
+            <h1 class="title">意见反馈</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="coupon-feedback__body">
+                <div class="feedback__phone">
+                <span class="feedback__phone--text">手机号</span>
+                <input class="feedback__input--text" type="text" placeholder="请留下您的联系方式">
+            </div>
+            <span class="feedback--text">反馈内容</span>
+            <textarea class="feedback__content" placeholder="请填写您宝贵的意见，我们将认真听取，及时改善"></textarea>
+            <input class="coupon-feedback--submit" type="button" value="提 交">
+      </div>
+    </div>
   </div>
   <script src="/assert/js/zepto.min.js"></script>
   <script src='/assert/js/sm.min.js'></script>

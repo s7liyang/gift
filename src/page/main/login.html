@@ -17,9 +17,9 @@
       <div class="page .page-current" id="page-login">
           <!-- 标题栏 -->
           <header class="bar bar-nav">
-              <a class="button button-link button-nav pull-left" href="">
+              <a class="button button-link button-nav pull-left" href="index.html" external>
                 <span class="icon icon-left" style="margin-top: -4px;"></span>
-                返回
+                首页
               </a>
               <h1 class="title">登录</h1>
               <a class="button button-link button-nav pull-right" href="#page-register">
@@ -82,7 +82,7 @@
       <div class="page" id="page-register">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="">
+            <a class="button button-link button-nav pull-left" href="login.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -142,7 +142,7 @@
       <div class="page" id="page-newPassword">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -189,7 +189,7 @@
       <div class="page" id="page-personalData">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -285,20 +285,119 @@
       <div class="page" id="page-address">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
+              <span class="icon icon-left" style="margin-top: -4px;"></span>
+              返回
+            </a>
+            <h1 class="title">我的地址</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="list-block">
+                <ul>
+                <!-- Text inputs -->
+                <li>
+                    <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">联系人</div>
+                        <div class="item-input">
+                        <input type="text" value="" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">手机 </div>
+                        <div class="item-input">
+                        <input type="email" value="" placeholder="请输入手机号码">
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">所在地区</div>
+                        <div class="item-input">
+                        <input type="text" id='city-picker' value="重庆 巴南区" />
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">详细地址</div>
+                        <div class="item-input">
+                        <input type="email" value="" placeholder="请输入详细地址">
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
+                    <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- 其他的单个page内联页（我的钱包） -->
+      <div class="page" id="page-purse">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
-            <h1 class="title">地址管理</h1>
+            <h1 class="title">我的钱包</h1>
         </header>
         <!-- 这里是页面内容区 -->
         <div class="content">
-           地址管理
+            <div class="list-block">
+                <ul>
+                <!-- Text inputs -->
+                <li class="item-content">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                    <div class="item-title">钱包余额：</div>
+                    <div class="item-after">￥100</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">充值</div>
+                        <div class="item-input">
+                        <input type="number" value="" placeholder="请输入充值金额">
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-100"><a href="#" class="button button-big button-fill button-success">确认充值</a></div>
+                </div>
+            </div>
         </div>
       </div>
   </div>
   <script src="/assert/js/zepto.min.js"></script>
   <script src='/assert/js/sm.min.js'></script>
   <script src='/assert/js/sm-extend.min.js'></script>
+  <script src='/assert/js/sm-city-picker.min.js'></script>
+  <script src='/assert/js/login.js'></script>
 </body>
 </html>

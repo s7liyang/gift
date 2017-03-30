@@ -85,7 +85,7 @@ function html() {
 
 function outputHtml() {
   return gulp.src('./src/page/**/*.html ', { base: './src/page/' })
-    .pipe(gulp.dest('./huatianweb'));
+    .pipe(gulp.dest('./giftweb'));
 }
 
 const filesetSvg = {
