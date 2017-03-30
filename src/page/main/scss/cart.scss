@@ -1,197 +1,198 @@
-//头部全选栏
-.topH{
-  height: 1.8rem;
-}
-.top{
-  position: fixed;
-  left: 0;
-  top: 2rem;
-  width: 100%;
-  height: 2rem;
-  padding: 0 0.5rem;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  .allchoosebox{
+//购物车样式开始
+.cart-group {
+  .topH {
+    height: 1.8rem;
+  }
+  .top {
+    position: fixed;
+    left: 0;
+    top: 2rem;
+    width: 100%;
+    height: 2rem;
+    padding: 0 0.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    .allchoosebox {
+      display: block;
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .allchooseimg {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+      }
+      .active {
+        background-image: url(../img/choose.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  //中间list
+  .list {
+    margin-top: rem(10);
+    background: white;
+    >div {
+      padding: rem(10) 0;
+    }
+    .listTop {
+      display: flex;
+      .listTopRadio {
+        width: rem(60);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        div.listChecked {
+          background: url(/assert/img/choose.png) no-repeat 50% 50%/100% 100%;
+          width: 1rem;
+          height: 1rem;
+          margin: auto;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        div.listUnchecked {
+          border: solid 1px #e1e1e1;
+          width: 1rem;
+          height: 1rem;
+          margin: auto;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            display: none;
+          }
+        }
+        div.can-not-Checked {
+          border: none;
+          background: url(/assert/img/choose.png) no-repeat 50% 50%/100% 100%;
+          width: rem(40);
+          height: rem(40);
+          margin: auto;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .listTopDetail {
+        flex-grow: 1;
+        display: flex;
+        .detailImg {
+          width: rem(108);
+          height: rem(108);
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .detailText {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          flex-grow: 1;
+          .textName {
+            div:first-child {
+              color: #353633;
+            }
+            div:last-child {
+              color: darkorange;
+            }
+            padding: 0 rem(10);
+            font-size: rem(20);
+            display: flex;
+            justify-content: space-between;
+          }
+          .textDiscription {
+            padding: 0 rem(10);
+            font-size: rem(16);
+            color: #7b896d;
+          }
+        }
+      }
+    }
+    .listBottom {
+      padding-top: 0;
+      font-size: rem(20);
+      display: flex;
+      justify-content: flex-end;
+      .float_left {
+        flex: 1;
+        padding-left: 1rem;
+      }
+      .listBottomTitle {
+        letter-spacing: rem(18);
+      }
+      .subtraction {
+        width: rem(32);
+        height: rem(32);
+        border: solid 1px #dbba68;
+        border-radius: rem(6);
+        display: flex;
+        justify-content: space-around;
+        color: #dbba68;
+      }
+      .addition {
+        width: rem(32);
+        height: rem(32);
+        border-radius: rem(6);
+        background: #dbba68;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        margin-right: rem(28);
+      }
+      .selectNumber {
+        margin: 0 rem(28);
+        color: darkorange;
+      }
+    }
+  }
+  //底部结算
+  .footerH {
+    height: 2.3rem;
+  }
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 2.5rem;
+    width: 100%;
+    padding-left: 0.5rem;
+    height: 2rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+  }
+  .totalbox {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    span {
+      color: orangered;
+    }
+  }
+  .countbox {
     display: block;
     flex: 1;
     height: 100%;
     display: flex;
     align-items: center;
-    .allchooseimg{
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-    }
-    .active{
-      background-image: url(../img/choose.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    font-size: 16px;
+    justify-content: center;
+    background-color: darkorange;
+    color: #fff;
   }
-}
-//中间list
-.list {
-  margin-top: rem(10);
-  background: white;
-  >div {
-    padding: rem(10) 0;
-  }
-  .listTop {
-    display: flex;
-    .listTopRadio {
-      width: rem(60);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      div.listChecked {
-        background: url(/assert/img/choose.png) no-repeat 50% 50%/100% 100%;
-        width: 1rem;
-        height: 1rem;
-        margin: auto;
-        border-radius: 50%;
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      div.listUnchecked {
-        border: solid 1px #e1e1e1;
-        width: 1rem;
-        height: 1rem;
-        margin: auto;
-        border-radius: 50%;
-        overflow: hidden;
-        img {
-          display: none;
-        }
-      }
-      div.can-not-Checked {
-        border: none;
-        background: url(/assert/img/choose.png) no-repeat 50% 50%/100% 100%;
-        width: rem(40);
-        height: rem(40);
-        margin: auto;
-        border-radius: 50%;
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-    .listTopDetail {
-      flex-grow: 1;
-      display: flex;
-      .detailImg {
-        width: rem(108);
-        height: rem(108);
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .detailText {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        flex-grow: 1;
-        .textName {
-          div:first-child {
-            color: #353633;
-          }
-          div:last-child {
-            color: darkorange;
-          }
-          padding: 0 rem(10);
-          font-size: rem(20);
-          display: flex;
-          justify-content: space-between;
-        }
-        .textDiscription {
-          padding: 0 rem(10);
-          font-size: rem(16);
-          color: #7b896d;
-        }
-      }
-    }
-  }
-  .listBottom {
-    padding-top: 0;
-    font-size: rem(20);
-    display: flex;
-    justify-content: flex-end;
-    .float_left {
-      flex: 1;
-      padding-left: 1rem;
-    }
-    .listBottomTitle {
-      letter-spacing: rem(18);
-    }
-    .subtraction {
-      width: rem(32);
-      height: rem(32);
-      border: solid 1px #dbba68;
-      border-radius: rem(6);
-      display: flex;
-      justify-content: space-around;
-      color: #dbba68;
-    }
-    .addition {
-      width: rem(32);
-      height: rem(32);
-      border-radius: rem(6);
-      background: #dbba68;
-      color: white;
-      display: flex;
-      justify-content: space-around;
-      margin-right: rem(28);
-    }
-    .selectNumber {
-      margin: 0 rem(28);
-      color: darkorange;
-    }
-  }
-}
-
-//底部结算
-.footerH{
-  height: 2.3rem;
-}
-footer{
-  position: fixed;
-  left: 0;
-  bottom: 2.5rem;
-  width: 100%;
-  padding-left: 0.5rem;
-  height: 2rem;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-  display: flex;
-  align-items: center;
-}
-.totalbox{
-  flex: 2;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  span{
-    color: orangered;
-  }
-}
-.countbox{
-  display: block;
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  justify-content: center;
-  background-color: darkorange;
-  color: #fff;
 }

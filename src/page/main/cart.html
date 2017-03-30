@@ -1,250 +1,247 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>礼品屋</title>
     <link rel="stylesheet" href="/assert/css/common.css">
     <link rel="stylesheet" href="/assert/css/sm.min.css">
     <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
     <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assert/css/cart.css">
+    <link rel="stylesheet" href="/assert/css/index.css">
 </head>
+
 <body>
-  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
-  <div class="page-group">
-      <!-- 单个page ,第一个.page默认被展示-->
-      <div class="page">
-          <!-- 标题栏 -->
-          <header class="bar bar-nav">
-              <h1 class="title">购物车</h1>
-          </header>
+    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+    <div class="page-group cart-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <h1 class="title">购物车</h1>
+            </header>
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item" href="index.html" external>
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item" href="game.html" external>
+                    <span class="icon icon-gift"></span>
+                    <span class="tab-label">发现</span>
+                </a>
+                <a class="tab-item active" href="cart.html" external data-no-cache="true">
+                    <span class="icon icon-cart"></span>
+                    <span class="tab-label">购物车</span>
+                </a>
+                <a class="tab-item" href="me.html" external>
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">我的</span>
+                </a>
+            </nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <!--头部全选栏-->
+                <div class="topH"></div>
+                <div class="top">
+                    <label class="allchoosebox" id="selectAllButton">
+                <div class="allchooseimg" for="allchoose"></div>
+                <input type="checkbox" id="allchoose" value=""  style="visibility: hidden"> 全选
+                </label>
+                    <div class="cancel">删 除</div>
+                </div>
 
-        <!-- 工具栏 -->
-        <nav class="bar bar-tab">
-            <a class="tab-item external" href="index.html">
-                <span class="icon icon-home"></span>
-                <span class="tab-label">首页</span>
-            </a>
-            <a class="tab-item external" href="game.html">
-                <span class="icon icon-gift"></span>
-                <span class="tab-label">发现</span>
-            </a>
-            <a class="tab-item external active" href="cart.html" data-no-cache="true">
-                <span class="icon icon-cart"></span>
-                <span class="tab-label">购物车</span>
-            </a>
-            <a class="tab-item external" href="me.html">
-                <span class="icon icon-me"></span>
-                <span class="tab-label">我的</span>
-            </a>
-        </nav>
-
-          <!-- 这里是页面内容区 -->
-          <div class="content">
-              <!--头部全选栏-->
-              <div class="topH"></div>
-              <div class="top">
-                 <label class="allchoosebox" id="selectAllButton">
-                    <div class="allchooseimg" for="allchoose"></div>
-                    <input type="checkbox" id="allchoose" value=""  style="visibility: hidden"> 全选
-                 </label>
-                 <div class="cancel">删 除</div>
-              </div>
-
-              <!--中间商品list-->
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                <!--中间商品list-->
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
-                    </div>
-                </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
-
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
                     </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
                 </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
 
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
-                    </div>
-                </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
-
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
                     </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
                 </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
 
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
-                    </div>
-                </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
-
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
                         </div>
                     </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
                 </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
-                </div>
-              </div>
 
-              <div class="list">
-                <div class="listTop">
-                    <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
-                    </div>
-                    <div class="listTopDetail">
-                        <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
-                        <div class="detailText">
-                            <div class="textName">
-                                <div>春暖花开</div>
-                                <div>￥<span class="listprice">10.0</span></div>
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
                             </div>
-                            <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
+                        </div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
+                            </div>
                         </div>
                     </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
                 </div>
-                <div class="listBottom">
-                    <div class="listBottomTitle">数量：</div>
-                    <div class="subtraction"><span>-</span></div>
-                    <div class="selectNumber">1</div>
-                    <div class="addition"><span>+</span></div>
+
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
+                            </div>
+                        </div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
                 </div>
-              </div>
-            
-              <!--底部结算-->
-              <div class="footerH"></div>
-              <footer>
-                 <div class="totalbox">合计：<span>￥</span>&nbsp;<span id="totalmoney">0.0</span></div>
-                 <a class="countbox" href="order.html" external>结 算</a>
-              </footer>
-          </div>
-      </div>
 
-      <!-- 其他的单个page内联页（如果有） -->
-      <div class="page">...</div>
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
+                            </div>
+                        </div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
+                </div>
 
-  </div>
-  <script src="/assert/js/zepto.min.js"></script>
-  <script src='/assert/js/sm.min.js'></script>
-  <script src='/assert/js/sm-extend.min.js'></script>
-  <script src='/assert/js/cart.js'></script>
+                <div class="list">
+                    <div class="listTop">
+                        <div class="listTopRadio" radioGroup="0">
+                            <div class="listUnchecked">
+                            </div>
+                        </div>
+                        <div class="listTopDetail">
+                            <div class="detailImg"><img src="/assert/img/birth7.jpg" alt=""></div>
+                            <div class="detailText">
+                                <div class="textName">
+                                    <div>春暖花开</div>
+                                    <div>￥<span class="listprice">10.0</span></div>
+                                </div>
+                                <div class="textDiscription">规格：8英寸，适合8~10人食用</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listBottom">
+                        <div class="listBottomTitle">数量：</div>
+                        <div class="subtraction"><span>-</span></div>
+                        <div class="selectNumber">1</div>
+                        <div class="addition"><span>+</span></div>
+                    </div>
+                </div>
+
+                <!--底部结算-->
+                <div class="footerH"></div>
+                <footer>
+                    <div class="totalbox">合计：<span>￥</span>&nbsp;<span id="totalmoney">0.0</span></div>
+                    <a class="countbox" href="order.html">结 算</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="/assert/js/zepto.min.js"></script>
+    <script src='/assert/js/sm.min.js'></script>
+    <script src='/assert/js/sm-extend.min.js'></script>
+    <script src='/assert/js/sm-city-picker.min.js'></script>
+    <script src='/assert/js/index.js'></script>
 </body>
+
 </html>

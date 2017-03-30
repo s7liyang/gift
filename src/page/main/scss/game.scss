@@ -1,47 +1,74 @@
-.nav-title{
-  height: 2.25rem;
-  .tith{
-    font-size:0.9rem;
-    float: left;
-    font-weight: normal;
-    line-height: 2.25rem;
-    padding-left: 1rem;
-    margin: 0;
-    strong{
+/*game样式开始*/
+.game-group {
+  .nav-title {
+    height: 2.25rem;
+    .tith {
+      font-size: 0.9rem;
+      float: left;
       font-weight: normal;
-      background: url(../img/icon_all.png) no-repeat;
-      background-size: 24rem 18rem;
-      padding-left: 2.25rem;
-      height: 2.25rem;
       line-height: 2.25rem;
-      display: inline-block;
+      padding-left: 1rem;
+      margin: 0;
+      strong {
+        font-weight: normal;
+        background: url(../img/icon_all.png) no-repeat;
+        background-size: 24rem 18rem;
+        padding-left: 2.25rem;
+        height: 2.25rem;
+        line-height: 2.25rem;
+        display: inline-block;
+      }
     }
   }
-}
-.nav-list{
-  padding: 0.25rem;
-  background-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  .item{
-    height: 1.25rem;
-    border-radius: 0.625rem;
-    padding: 0 0.5rem;
-    font-size: 0.8rem;
-    color: #fff;
-    margin: 0.35rem 0.5rem;
-    background-color:#98FB98;
-    &:nth-child(2){background-color: #E94068;}
-    &:nth-child(3){background-color: #EE85A5;}
-    &:nth-child(4){background-color: #DDA0DD;}
-    &:nth-child(5){background-color: #00ACFE;}
-    &:nth-child(6){background-color: #C1C1C1;}
-    &:nth-child(7){background-color: #FF6D26;}
-    &:nth-child(8){background-color: #EE82EE;}
-    &:nth-child(9){background-color: #00BFFF;}
-    &:nth-child(10){background-color:#D19275;}
-    &:nth-child(11){background-color:#228B22;}
-    &:nth-child(12){background-color:#FFD700;}
-    &:nth-child(13){background-color:#AFEEEE;}
+  .nav-list {
+    padding: 0.25rem;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+      height: 1.25rem;
+      border-radius: 0.625rem;
+      padding: 0 0.5rem;
+      font-size: 0.8rem;
+      color: #fff;
+      margin: 0.35rem 0.5rem;
+      background-color: #98FB98;
+      &:nth-child(2) {
+        background-color: #E94068;
+      }
+      &:nth-child(3) {
+        background-color: #EE85A5;
+      }
+      &:nth-child(4) {
+        background-color: #DDA0DD;
+      }
+      &:nth-child(5) {
+        background-color: #00ACFE;
+      }
+      &:nth-child(6) {
+        background-color: #C1C1C1;
+      }
+      &:nth-child(7) {
+        background-color: #FF6D26;
+      }
+      &:nth-child(8) {
+        background-color: #EE82EE;
+      }
+      &:nth-child(9) {
+        background-color: #00BFFF;
+      }
+      &:nth-child(10) {
+        background-color: #D19275;
+      }
+      &:nth-child(11) {
+        background-color: #228B22;
+      }
+      &:nth-child(12) {
+        background-color: #FFD700;
+      }
+      &:nth-child(13) {
+        background-color: #AFEEEE;
+      }
+    }
   }
 }

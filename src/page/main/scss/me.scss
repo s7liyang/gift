@@ -1,180 +1,171 @@
-/*覆盖sui的属性*/
-body,.page-group,.page-group.page-current, .page.page-current{
-  overflow-y:scroll; 
-}
-.list-block .item-media+.item-inner{
-  margin-left: 0;
-}
-.list-block .item-content{
-  padding-right: 0.75rem;
-}
-.list-block{
-  margin: rem(10) 0 0 0;
-  font-size: rem(20);
-}
-.list-block .item-link .item-inner{
-  background-image: url(/assert/img/r_top_icon.svg);
-  background-size: rem(14) rem(16);
-}
-.list-block .item-title,.list-block .item-after{
-  color: #353633;
-}
-.list-block .item-inner {
-  padding-top: rem(24);
-  padding-bottom: rem(24);
-}
-/*覆盖sui的属性*/
-
-/*自定义的属性*/
-.topImage {
-  height: rem(240);
-  width: 100%;
-  padding-top: rem(28);
-  background: url(/assert/img/usercenter-bg.png) no-repeat 50% 50%/100% 100%;
-  .userImg {
-    width: rem(140);
-    height: rem(140);
-    border-radius: 50%;
-    margin: 0 auto rem(16);
-    border: solid 2px #e1e1e1;
-    .userImgInner {
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      width: rem(120);
-      height: rem(120);
+//me.html页面样式开始
+.me-group {
+  /*覆盖sui的属性*/
+  .list-block .item-media+.item-inner {
+    margin-left: 0;
+  }
+  .list-block .item-content {
+    padding-right: 0.75rem;
+  }
+  .list-block {
+    margin: rem(10) 0 0 0;
+    font-size: rem(20);
+  }
+  .list-block .item-link .item-inner {
+    background-image: url(/assert/img/r_top_icon.svg);
+    background-size: rem(14) rem(16);
+  }
+  .list-block .item-title,
+  .list-block .item-after {
+    color: #353633;
+  }
+  .list-block .item-inner {
+    padding-top: rem(24);
+    padding-bottom: rem(24);
+  }
+  /*自定义的属性*/
+  .topImage {
+    height: rem(240);
+    width: 100%;
+    padding-top: rem(28);
+    background: url(/assert/img/usercenter-bg.png) no-repeat 50% 50%/100% 100%;
+    .userImg {
+      width: rem(140);
+      height: rem(140);
       border-radius: 50%;
-      overflow: hidden;
-      margin: rem(8) auto;
+      margin: 0 auto rem(16);
+      border: solid 2px #e1e1e1;
+      .userImgInner {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        width: rem(120);
+        height: rem(120);
+        border-radius: 50%;
+        overflow: hidden;
+        margin: rem(8) auto;
+      }
+    }
+    .userNick {
+      text-align: center;
+      font-size: rem(24);
+      color: white;
+      margin-bottom: rem(14);
     }
   }
-  .userNick {
-    text-align: center;
-    font-size: rem(24);
-    color: white;
-    margin-bottom: rem(14);
+  .tab {
+    background: white;
+    width: 100%;
+    padding: rem(20) 0;
+    overflow: hidden;
+    .middle_tab {
+      border-left: solid 1px #e1e1e1;
+      border-right: solid 1px #e1e1e1;
+    }
+    >div {
+      width: 33.33%;
+      float: left;
+      text-align: center;
+    }
   }
-}
-
-.tab {
-  background: white;
-  width: 100%;
-  padding: rem(20) 0;
-  overflow: hidden;
-  .middle_tab {
-    border-left: solid 1px #e1e1e1;
-    border-right: solid 1px #e1e1e1;
+  .list-block {
+    .item-title {
+      text-indent: 30px;
+    }
+    .memberCard {
+      background: url(/assert/img/memberCard.svg) no-repeat 0 50%/20px 100%;
+    }
+    .discountCard {
+      background: url(/assert/img/money_bg.svg) no-repeat 0 50%/20px 100%;
+    }
+    .goodsCard {
+      background: url(/assert/img/card_icon.svg) no-repeat 0 50%/20px 100%;
+    }
+    .memberInfo {
+      background: url(/assert/img/memberInfo.svg) no-repeat 0 50%/20px 100%;
+    }
+    .serviceTel {
+      background: url(/assert/img/serviceTel.svg) no-repeat 0 50%/20px 100%;
+    }
+    .security {
+      background: url(/assert/img/security.svg) no-repeat 0 50%/20px 100%;
+    }
+    .advice {
+      background: url(/assert/img/pen_icon.svg) no-repeat 0 50%/20px 100%;
+    }
+    .addresses {
+      background: url(/assert/img/addresses.svg) no-repeat 0 50%/20px 100%;
+    }
   }
-  >div {
-    width: 33.33%;
-    float: left;
-    text-align: center;
+  // page-feedback内联页面
+  .coupon-feedback__body {
+    display: flex;
+    padding: rem(12);
+    background: #f2f2f2;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
-}
-
-.list-block{
-  .item-title{
-    text-indent: 30px;
+  .feedback__phone {
+    display: flex;
+    padding: 0 rem(10);
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    border-radius: rem(16);
+    width: 100%;
+    height: rem(80);
+    background: #fff;
+    box-shadow: 0px 1px #e6e6e6;
   }
-  .memberCard{
-    background: url(/assert/img/memberCard.svg) no-repeat 0 50%/20px 100%;
+  .feedback__phone--text {
+    margin-right: rem(16);
+    font-size: rem(20);
+    color: #353633;
+    letter-spacing: rem(2);
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
   }
-  .discountCard{
-    background: url(/assert/img/money_bg.svg) no-repeat 0 50%/20px 100%;
+  .feedback__input--text {
+    color: #b9b9b9;
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+    font-size: rem(20);
+    border: none;
+    flex: 1;
   }
-  .goodsCard{
-    background: url(/assert/img/card_icon.svg) no-repeat 0 50%/20px 100%;
+  .feedback--text {
+    display: block;
+    margin: rem(26) 0 rem(22) rem(10);
+    align-self: flex-start;
+    color: #353633;
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+    font-size: rem(20);
   }
-  .memberInfo{
-    background: url(/assert/img/memberInfo.svg) no-repeat 0 50%/20px 100%;
+  .feedback__content {
+    width: 100%;
+    background: #fff;
+    resize: none;
+    border: 1px solid #e6e6e6;
+    border-radius: rem(16);
+    box-shadow: 0px 1px #e6e6e6;
+    color: #b9b9b9;
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+    font-size: rem(20);
+    padding-top: rem(12);
+    height: rem(384);
+    text-indent: rem(20);
   }
-  .serviceTel{
-    background: url(/assert/img/serviceTel.svg) no-repeat 0 50%/20px 100%;
+  .coupon-feedback--submit {
+    margin-top: rem(24);
+    width: rem(240);
+    height: rem(60);
+    color: #fff;
+    background-color: #dbbb69;
+    border-radius: rem(30);
+    border: none;
+    font-size: rem(20);
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
   }
-  .security{
-    background: url(/assert/img/security.svg) no-repeat 0 50%/20px 100%;
-  }
-  .advice{
-    background: url(/assert/img/pen_icon.svg) no-repeat 0 50%/20px 100%;
-  }
-  .addresses{
-    background: url(/assert/img/addresses.svg) no-repeat 0 50%/20px 100%;
-  }
-}
-/*自定义的属性*/
-
-// page-feedback内联页面
-.coupon-feedback__body {
-  display: flex;
-  padding: rem(12);
-  background: #f2f2f2;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-.feedback__phone {
-  display: flex;
-  padding: 0 rem(10);
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px solid #e6e6e6;
-  border-radius: rem(16);
-  width: 100%;
-  height: rem(80);
-  background: #fff;  
-  box-shadow: 0px 1px #e6e6e6;
-}
-.feedback__phone--text{
-  margin-right: rem(16);
-  font-size: rem(20);
-  color: #353633;
-  letter-spacing: rem(2);
-  font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
-}
-
-.feedback__input--text{
-  color: #b9b9b9;
-  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-  font-size: rem(20);
-  border: none;
-  flex: 1;
-}
-
-.feedback--text{
-  display: block;
-  margin: rem(26) 0 rem(22) rem(10);
-  align-self: flex-start;  
-  color: #353633;
-  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-  font-size: rem(20);
-}
-
-.feedback__content {
-  width: 100%;
-  background: #fff;
-  resize: none;
-  border: 1px solid #e6e6e6;  
-  border-radius: rem(16);
-  box-shadow: 0px 1px #e6e6e6;
-  color: #b9b9b9;
-  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-  font-size: rem(20);
-  padding-top: rem(12);
-  height: rem(384);  
-  text-indent: rem(20);
-}
-
-.coupon-feedback--submit {
-  margin-top: rem(24);
-  width: rem(240);
-  height: rem(60);
-  color: #fff;
-  background-color: #dbbb69;
-  border-radius: rem(30);
-  border: none;
-  font-size: rem(20);
-  font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
 }

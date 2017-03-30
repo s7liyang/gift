@@ -2,236 +2,339 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" 
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>礼品屋</title>
     <link rel="stylesheet" href="/assert/css/common.css">
     <link rel="stylesheet" href="/assert/css/sm.min.css">
     <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
     <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assert/css/order.css">
+    <link rel="stylesheet" href="/assert/css/index.css">
 </head>
 <body>
-  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
-  <div class="page-group">
-      <!-- 单个page ,第一个.page默认被展示-->
-      <div class="page">
-          <!-- 标题栏 -->
-          <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="me.html" external>
-              <span class="icon icon-left" style="margin-top: -4px;"></span>
-              返回
-            </a>
-            <h1 class="title">我的订单</h1>
-          </header>
-          <!-- 这里是页面内容区 -->
-          <div class="content">
-            <div class="buttons-tab">
-                <a href="#tab1" class="tab-link active button">全部订单</a>
-                <a href="#tab2" class="tab-link button">待付款</a>
-                <a href="#tab3" class="tab-link button">待发货</a>
-                <a href="#tab4" class="tab-link button">已完成</a>
-            </div>
-            <div class="content-block">
-                <div class="tabs">
-                    <!--tab1  全部订单-->
-                    <div id="tab1" class="tab active">
-                        <!--1待付款-->
-                        <div class="container-order">
-                            <div class="container-title">
-                                <span>订单号：654889715</span>
-                                <span>金额：￥100</span>
-                                <span>待付款</span>
+    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+    <div class="page-group order-group">
+        <!--订单页面-->
+        <div class="page page-current" id="page-oeder">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back">
+                    <span class="icon icon-left" style="margin-top: -4px;"></span> 返回
+                </a>
+                <h1 class="title">我的订单</h1>
+            </header>
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <div class="buttons-tab">
+                    <a href="#tab1" class="tab-link active button">全部订单</a>
+                    <a href="#tab2" class="tab-link button">待付款</a>
+                    <a href="#tab3" class="tab-link button">待发货</a>
+                    <a href="#tab4" class="tab-link button">已完成</a>
+                </div>
+                <div class="content-block">
+                    <div class="tabs">
+                        <!--tab1  全部订单-->
+                        <div id="tab1" class="tab active">
+                            <!--1待付款-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>订单号：654889715</span>
+                                    <span>金额：￥100</span>
+                                    <span>待付款</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/cacke2.png" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="/assert/img/cacke2.png" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="/assert/img/cacke2.png" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">共3款</span>
+                                    </div>
+                                </div>
+                                <div class="pay_goods_btn">
+                                    <button class="pay-btn open-popup"><a href="">去支付</a></button>
+                                </div>
                             </div>
-                            <div class="container-card-goods">
-                              <ul>
-                                <li>
-                                    <img src="/assert/img/cacke2.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="/assert/img/cacke2.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="/assert/img/cacke2.png" alt="">
-                                </li>
-                              </ul>             
-                              <div>
-                                  <span class="all_goods">共3款</span>
-                              </div>
+                            <!--待发货-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>订单号：654889158</span>
+                                    <span>金额：￥100</span>
+                                    <span>待发货</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/cacke1.png" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">共1款</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pay_goods_btn">
-                                  <button class="pay-btn open-popup"><a href="">去支付</a></button>
-                            </div>
-                        </div>
-                        <!--待发货-->
-                        <div class="container-order">
-                            <div class="container-title">
-                                <span>订单号：654889158</span>
-                                <span>金额：￥100</span>
-                                <span>待发货</span>
-                            </div>
-                            <div class="container-card-goods">
-                              <ul>
-                              <li>
-                                  <img src="/assert/img/cacke1.png" alt="">
-                              </li>
-                            </ul>  
-                                <div>
-                                    <span class="all_goods">共1款</span>
+                            <!--已完成-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>订单号：654889148</span>
+                                    <span>金额：￥100</span>
+                                    <span>已完成</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/cacke1.png" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">共1款</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!--已完成-->
-                        <div class="container-order">
-                            <div class="container-title">
-                                <span>订单号：654889148</span>
-                                <span>金额：￥100</span>
-                                <span>已完成</span>
+                        <!--tab2 待付款-->
+                        <div id="tab2" class="tab">
+                            <div class="content-block">
+                                <div class="not_paying">
+                                    <div class="not_paying_basket">
+                                        <img src="/assert/img/cart-no.png" alt="">
+                                    </div>
+                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
+                                    <button class="go_shop"><a href="">去逛逛</a></button>
+                                </div>
                             </div>
-                            <div class="container-card-goods">
-                              <ul>
-                              <li>
-                                  <img src="/assert/img/cacke1.png" alt="">
-                              </li>
-                            </ul>  
-                                <div>
-                                    <span class="all_goods">共1款</span>
+                        </div>
+                        <!--tab3-->
+                        <div id="tab3" class="tab">
+                            <div class="content-block">
+                                <div class="not_paying">
+                                    <div class="not_paying_basket">
+                                        <img src="/assert/img/cart-no.png" alt="">
+                                    </div>
+                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
+                                    <button class="go_shop"><a href="">去逛逛</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab4-->
+                        <div id="tab4" class="tab">
+                            <div class="content-block">
+                                <div class="not_paying">
+                                    <div class="not_paying_basket">
+                                        <img src="/assert/img/cart-no.png" alt="">
+                                    </div>
+                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
+                                    <button class="go_shop"><a href="">去逛逛</a></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--tab2 待付款-->
-                    <div id="tab2" class="tab">
-                        <div class="content-block">
-                            <div class="not_paying">
-                                    <div class="not_paying_basket">
-                                          <img src="/assert/img/cart-no.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <!--优惠券页面-->
+        <div class="page" id="page-coupon">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back">
+                    <span class="icon icon-left" style="margin-top: -4px;"></span> 返回
+                </a>
+                <h1 class="title">我的优惠券</h1>
+            </header>
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <div class="buttons-tab">
+                    <a href="#tab1" class="tab-link active button">未使用</a>
+                    <a href="#tab2" class="tab-link button">已使用</a>
+                    <a href="#tab3" class="tab-link button">已过期</a>
+                </div>
+                <div class="content-block">
+                    <div class="tabs">
+                        <!--tab1  未使用-->
+                        <div id="tab1" class="tab active">
+                            <!--未使用1-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>编号：654889715</span>
+                                    <span>未使用</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/coupon-20.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">过期时间：2017-03-29 11:40:23</span>
                                     </div>
-                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
-                                    <button class="go_shop"><a href="">去逛逛</a></button>
+                                </div>
+                                <div class="pay_goods_btn">
+                                    <button class="pay-btn"><a href="">去使用</a></button>
+                                </div>
+                            </div>
+                            <!--未使用2-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>编号：654889715</span>
+                                    <span>未使用</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/coupon-100.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">过期时间：2017-03-29 11:40:23</span>
+                                    </div>
+                                </div>
+                                <div class="pay_goods_btn">
+                                    <button class="pay-btn"><a href="">去使用</a></button>
+                                </div>
+                            </div>
+                            <!--未使用3-->
+                            <div class="container-order">
+                                <div class="container-title">
+                                    <span>编号：654889715</span>
+                                    <span>未使用</span>
+                                </div>
+                                <div class="container-card-goods">
+                                    <ul>
+                                        <li>
+                                            <img src="/assert/img/coupon-20.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <span class="all_goods">过期时间：2017-03-29 11:40:23</span>
+                                    </div>
+                                </div>
+                                <div class="pay_goods_btn">
+                                    <button class="pay-btn"><a href="">去使用</a></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--tab3-->
-                    <div id="tab3" class="tab">
-                        <div class="content-block">
-                            <div class="not_paying">
+                        <!--tab2 已使用-->
+                        <div id="tab2" class="tab">
+                            <div class="content-block">
+                                <div class="not_paying">
                                     <div class="not_paying_basket">
-                                          <img src="/assert/img/cart-no.png" alt="">
+                                        <img src="/assert/img/coupon-no.svg" alt="">
                                     </div>
-                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
-                                    <button class="go_shop"><a href="">去逛逛</a></button>
+                                    <div class="not_pay_title">还空着呢!</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--tab4-->
-                    <div id="tab4" class="tab">
-                        <div class="content-block">
-                            <div class="not_paying">
+                        <!--tab3 已过期-->
+                        <div id="tab3" class="tab">
+                            <div class="content-block">
+                                <div class="not_paying">
                                     <div class="not_paying_basket">
-                                          <img src="/assert/img/cart-no.png" alt="">
+                                        <img src="/assert/img/coupon-no.svg" alt="">
                                     </div>
-                                    <div class="not_pay_title">还空着呢,再去逛逛吧!</div>
-                                    <button class="go_shop"><a href="">去逛逛</a></button>
+                                    <div class="not_pay_title">还空着呢!</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-      </div>
-      <!-- 其他的单个page内联页（如果有） -->
-      <div class="page">...</div>
-    <!-- 确认支付弹框 -->
-    <div class="popup">
-        <header class="bar bar-nav">
-            <h1 class='title'>确认支付</h1>
-        </header>
-        <div class="content">
-        <div class="content-block-title">订单详情</div>
-        <div class="list-block">
-            <ul>
-            <!-- Text inputs -->
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">订单编号</div>
-                <div class="item-after">654889148</div>
+        <!-- 确认支付弹框 -->
+        <div class="popup">
+            <header class="bar bar-nav">
+                <h1 class='title'>确认支付</h1>
+            </header>
+            <div class="content">
+                <div class="content-block-title">订单详情</div>
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">订单编号</div>
+                                <div class="item-after">654889148</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">商品数量</div>
+                                <div class="item-after">3</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">金额</div>
+                                <div class="item-after">￥200</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">优惠券</div>
+                                <div class="item-after">-20</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">实付金额</div>
+                                <div class="item-after">￥180</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">联系人</div>
+                                <div class="item-after">花生</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">电话</div>
+                                <div class="item-after">123456789</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">地址</div>
+                                <div class="item-after">重庆市巴南区</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">支付方式</div>
+                                <div class="item-after">钱包扣款</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">商品数量</div>
-                <div class="item-after">3</div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消支付</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success close-popup">确认支付</a></div>
+                    </div>
                 </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">金额</div>
-                <div class="item-after">￥200</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">优惠券</div>
-                <div class="item-after">-20</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">实付金额</div>
-                <div class="item-after">￥180</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">联系人</div>
-                <div class="item-after">花生</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">电话</div>
-                <div class="item-after">123456789</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">地址</div>
-                <div class="item-after">重庆市巴南区</div>
-                </div>
-            </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon icon-f7"></i></div>
-                <div class="item-inner">
-                <div class="item-title">支付方式</div>
-                <div class="item-after">钱包扣款</div>
-                </div>
-            </li>
-            </ul>
-        </div>
-        <div class="content-block">
-            <div class="row">
-            <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消支付</a></div>
-            <div class="col-50"><a href="#" class="button button-big button-fill button-success close-popup">确认支付</a></div>
             </div>
-        </div>
         </div>
     </div>
-
-  </div>
-  <script src="/assert/js/zepto.min.js"></script>
-  <script src='/assert/js/sm.min.js'></script>
-  <script src='/assert/js/sm-extend.min.js'></script>
-  <script src="/assert/js/order.js"></script>
+    <script src="/assert/js/zepto.min.js"></script>
+    <script src='/assert/js/sm.min.js'></script>
+    <script src='/assert/js/sm-extend.min.js'></script>
+    <script src='/assert/js/sm-city-picker.min.js'></script>
+    <script src="/assert/js/index.js"></script>
 </body>
 </html>
