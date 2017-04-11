@@ -35,7 +35,7 @@
                     <span class="icon icon-cart"></span>
                     <span class="tab-label">购物车</span>
                 </a>
-                <a class="tab-item active" href="me.html" external data-no-cache="true">
+                <a class="tab-item active" id="me" href="me.html" external data-no-cache="true">
                     <span class="icon icon-me"></span>
                     <span class="tab-label">我的</span>
                 </a>
@@ -45,9 +45,9 @@
                 <!--头像昵称-->
                 <div class="topImage">
                     <div class="userImg">
-                        <div class="userImgInner"><img src="/assert/img/birth7.jpg" alt=""></div>
+                        <div class="userImgInner"><img id="userimg" src="" alt=""></div>
                     </div>
-                    <div class="userNick">朝花夕拾</div>
+                    <div class="userNick" id="userNick"></div>
                 </div>
                 <div class="tab">
                     <div class="first_tab">
@@ -56,7 +56,7 @@
                     <div class="middle_tab">
                         <a href="user.html#page-purse">我的钱包</a>
                     </div>
-                    <div class="last_tab">
+                    <div class="last_tab" id="signout">
                         <a href="user.html#page-login">退出</a>
                     </div>
                 </div>
@@ -106,13 +106,15 @@
                                 </div>
                             </li>
                         </a>
-                        <li class="item-content">
+                        <a href="activity.html" external>
+                        <li class="item-content item-link">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title serviceTel">客服电话</div>
-                                <div class="item-after">023-66664567</div>
+                                <div class="item-title serviceTel">领取优惠</div>
+                                <div class="item-after"></div>
                             </div>
                         </li>
+                        </a>
                         <a href="#page-feedback">
                             <li class="item-content item-link">
                                 <div class="item-media"><i class="icon icon-f7"></i></div>
@@ -138,15 +140,18 @@
             </header>
             <!-- 这里是页面内容区 -->
             <div class="content">
+                <form id="form-feedback">
                 <div class="coupon-feedback__body">
                     <div class="feedback__phone">
                         <span class="feedback__phone--text">手机号</span>
-                        <input class="feedback__input--text" type="text" placeholder="请留下您的联系方式">
+                        <input class="feedback__input--text" type="text" name="phone" placeholder="请留下您的联系方式">
+                        <input type="text" id="feedback-userid" name="userid" style="display:none">
                     </div>
                     <span class="feedback--text">反馈内容</span>
-                    <textarea class="feedback__content" placeholder="请填写您宝贵的意见，我们将认真听取，及时改善"></textarea>
-                    <input class="coupon-feedback--submit" type="button" value="提 交">
+                    <textarea class="feedback__content" name="txt" placeholder="请填写您宝贵的意见，我们将认真听取，及时改善"></textarea>
+                    <input class="coupon-feedback--submit" type="button" id="bt-feedback" value="提 交">
                 </div>
+                </form>
             </div>
         </div>
         <script src="/assert/js/zepto.min.js"></script>
@@ -154,5 +159,6 @@
         <script src='/assert/js/sm-extend.min.js'></script>
         <script src='/assert/js/sm-city-picker.min.js'></script>
         <script src="/assert/js/index.js"></script>
+        <script src="/assert/js/me.js"></script>
 </body>
 </html>

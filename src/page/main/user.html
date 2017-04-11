@@ -33,13 +33,14 @@
               <div class="list-block">
                 <ul>
                     <!-- Text inputs -->
+                    <form id="form-login">
                     <li>
                         <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-name"></i></div>
                         <div class="item-inner">
                             <div class="item-title label">用户名</div>
                             <div class="item-input">
-                            <input type="text" placeholder="请输入手机号">
+                            <input type="text" name="username" placeholder="请输入用户名">
                             </div>
                         </div>
                         </div>
@@ -50,11 +51,12 @@
                         <div class="item-inner">
                             <div class="item-title label">密码</div>
                             <div class="item-input">
-                            <input type="password" placeholder="请输入密码" class="">
+                            <input type="password" name="password" placeholder="请输入密码" class="">
                             </div>
                         </div>
                         </div>
                     </li>
+                    </form>
                     <!-- Switch (Checkbox) -->
                     <li>
                         <div class="item-content">
@@ -63,7 +65,7 @@
                             <div class="item-title label">记住密码</div>
                             <div class="item-input">
                             <label class="label-switch">
-                                <input type="checkbox">
+                                <input type="checkbox" checked="checked">
                                 <div class="checkbox"></div>
                             </label>
                             </div>
@@ -74,7 +76,7 @@
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-100"><a href="#" class="button button-big button-fill button-success">登 录</a></div>
+                    <div class="col-100"><a id="bt-login" class="button button-big button-fill button-success">登 录</a></div>
                 </div>
             </div>
           </div>
@@ -98,13 +100,14 @@
             <div class="list-block">
                 <ul>
                     <!-- Text inputs -->
+                    <form id="form-register">
                     <li>
                         <div class="item-content">
                         <div class="item-media"><i class="icon icon-form-name"></i></div>
                         <div class="item-inner">
                             <div class="item-title label">用户名</div>
                             <div class="item-input">
-                            <input type="text" placeholder="请输入手机号">
+                            <input type="text" name="username" placeholder="请输入手机号">
                             </div>
                         </div>
                         </div>
@@ -115,11 +118,12 @@
                         <div class="item-inner">
                             <div class="item-title label">密码</div>
                             <div class="item-input">
-                            <input type="password" placeholder="请输入密码" class="">
+                            <input type="password" name="password" placeholder="请输入密码" class="">
                             </div>
                         </div>
                         </div>
                     </li>
+                    </form>
                     <!-- Switch (Checkbox) -->
                     <li>
                         <div class="item-content">
@@ -134,7 +138,7 @@
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-100"><a href="#" class="button button-big button-fill button-warning">注 册</a></div>
+                    <div class="col-100"><a id="bt-register" class="button button-big button-fill button-warning">注 册</a></div>
                 </div>
             </div>
         </div>
@@ -208,7 +212,7 @@
                     <div class="item-inner">
                         <div class="item-title label">昵称</div>
                         <div class="item-input">
-                        <input type="text" value="花生seven">
+                        <input type="text" id="nickname" name="nickname" value="">
                         </div>
                     </div>
                     </div>
@@ -219,7 +223,7 @@
                     <div class="item-inner">
                         <div class="item-title label">头像</div>
                         <div class="item-input">
-                        <input type="file" value="">
+                        <input type="file" id="userimg" name="userimg" value="">
                         </div>
                     </div>
                     </div>
@@ -230,7 +234,7 @@
                     <div class="item-inner">
                         <div class="item-title label">邮箱</div>
                         <div class="item-input">
-                        <input type="email" value="767478876@qq.com">
+                        <input type="email" id="email" name="email" value="">
                         </div>
                     </div>
                     </div>
@@ -241,7 +245,7 @@
                     <div class="item-inner">
                         <div class="item-title label">手机</div>
                         <div class="item-input">
-                        <input type="text" value="13436166009" class="">
+                        <input type="text" id="phone" name="phone" value="">
                         </div>
                     </div>
                     </div>
@@ -252,9 +256,9 @@
                     <div class="item-inner">
                         <div class="item-title label">性别</div>
                         <div class="item-input">
-                        <select>
-                            <option>Male</option>
-                            <option>Female</option>
+                        <select id="sex" name="sex">
+                            <option>女</option>
+                            <option>男</option>
                         </select>
                         </div>
                     </div>
@@ -267,7 +271,7 @@
                     <div class="item-inner">
                         <div class="item-title label">生日</div>
                         <div class="item-input">
-                        <input type="date" placeholder="Birth day" value="2017-03-28">
+                        <input type="date" placeholder="Birth day" id="birth" name="birth" value="">
                         </div>
                     </div>
                     </div>
@@ -278,7 +282,7 @@
                     <div class="item-inner">
                         <div class="item-title label">个人签名</div>
                         <div class="item-input">
-                        <textarea>今天天气好晴朗。。。</textarea>
+                        <textarea id="sign" name="sign"></textarea>
                         </div>
                     </div>
                     </div>
@@ -287,7 +291,7 @@
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
+                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger back">取消</a></div>
                     <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
                 </div>
             </div>
@@ -315,7 +319,7 @@
                     <div class="item-inner">
                         <div class="item-title label">联系人</div>
                         <div class="item-input">
-                        <input type="text" value="" placeholder="请输入姓名">
+                        <input type="text" id="name" name="name" value="" placeholder="请输入姓名">
                         </div>
                     </div>
                     </div>
@@ -326,7 +330,7 @@
                     <div class="item-inner">
                         <div class="item-title label">联系电话</div>
                         <div class="item-input">
-                        <input type="email" value="" placeholder="请输入手机号码">
+                        <input type="text" id="addphone" name="addphone" value="" placeholder="请输入手机号码">
                         </div>
                     </div>
                     </div>
@@ -337,7 +341,7 @@
                     <div class="item-inner">
                         <div class="item-title label">邮政编码</div>
                         <div class="item-input">
-                        <input type="email" value="" placeholder="请输入邮政编码">
+                        <input type="email" id="postcode" name="postcode" value="" placeholder="请输入邮政编码">
                         </div>
                     </div>
                     </div>
@@ -348,7 +352,7 @@
                     <div class="item-inner">
                         <div class="item-title label">所在地区</div>
                         <div class="item-input">
-                        <input type="text" id='city-picker' value="重庆 巴南区" />
+                        <input type="text" id='city-picker' name="area" value="" />
                         </div>
                     </div>
                     </div>
@@ -359,7 +363,7 @@
                     <div class="item-inner">
                         <div class="item-title label">详细地址</div>
                         <div class="item-input">
-                        <input type="email" value="" placeholder="请输入详细地址">
+                        <input type="email" id="detail" name="detail" value="" placeholder="请输入详细地址">
                         </div>
                     </div>
                     </div>
@@ -393,7 +397,7 @@
                     <div class="item-media"><i class="icon icon-f7"></i></div>
                     <div class="item-inner">
                     <div class="item-title">钱包余额：</div>
-                    <div class="item-after">￥100</div>
+                    <div class="item-after">￥<span id="money"></span></div>
                     </div>
                 </li>
                 <li>
@@ -422,5 +426,6 @@
   <script src='/assert/js/sm-extend.min.js'></script>
   <script src='/assert/js/sm-city-picker.min.js'></script>
   <script src='/assert/js/index.js'></script>
+  <script src='/assert/js/user.js'></script>
 </body>
 </html>

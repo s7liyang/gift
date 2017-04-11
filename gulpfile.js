@@ -88,6 +88,11 @@ function outputHtml() {
     .pipe(gulp.dest('./giftweb'));
 }
 
+function copyall() {
+  return gulp.src('./output/**')
+    .pipe(gulp.dest('./../../phpStudy/WWW/'));
+}
+
 const filesetSvg = {
   src: './src/**/**/svg/*.svg',
   dest: './output/assert'
@@ -100,6 +105,7 @@ function watch() {
   gulp.watch('./src/**/*.scss', gulp.parallel(scssCompile));
   // gulp.watch('./src/**/**/svg/*.svg', gulp.parallel(task.svgSprites));
   gulp.watch('./src/page/**/*.html', gulp.parallel(html));
+  gulp.watch('./output/**', gulp.parallel(copyall));
   gulp.watch('./src/res/img/*.*', gulp.parallel(gulp.series(
       imgToBuild
     ))
@@ -127,6 +133,7 @@ gulp.task('dev', gulp.series(
   imgToBuild,
   task.svgSprites,
   html,
+  copyall,
   scssCompile,
   addCommonJs,
   addCommonCss,
@@ -140,6 +147,7 @@ gulp.task('build', gulp.series(
   task.svgSprites,
   scssCompile, 
   html,
+  copyall,
   outputHtml,
   addCommonCss,
   addFonts,
