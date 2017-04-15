@@ -49,26 +49,12 @@
             }
         }
     }
-    .pay_goods_btn {
-        text-align: right;
-        height: rem(56);
-        padding-top: rem(16);
+    .container-bottom {
+        display: flex;
+        justify-content: space-between;
+        font-size: rem(16);
         border-top: 1px dotted #7b896d;
-    }
-    .pay_goods_btn .pay-btn {
-        width: rem(108);
-        font-size: rem(18);
-        height: rem(34);
-        line-height: rem(34);
-        text-align: center;
-        color: #ffffff;
-        background-color: #dbbb69;
-        outline: none;
-        border: none;
-        border-radius: rem(17);
-    }
-    .pay_goods_btn a {
-        color: #ffffff;
+        padding: rem(10) 0;
     }
     /*无订单页面*/
     .not_paying {

@@ -1,4 +1,4 @@
-.details-group {
+.detail-group {
     .topH {
         height: 2.2rem;
     }
@@ -37,11 +37,11 @@
             width: rem(20);
             height: rem(20);
             margin-left: rem(12);
-            fill: #7B896D;
+            fill: darkorange;
         }
         .sp1 {
             font-size: rem(24);
-            color: #7B896D;
+            color: darkorange;
         }
         .sp2 {
             font-size: rem(16);
@@ -78,13 +78,13 @@
                     outline: none;
                     padding: 0;
                     border-radius: rem(2);
-                    color: #7B896D;
-                    border: 1px solid #7B896D;
+                    color: darkorange;
+                    border: 1px solid orange;
                     margin-right: rem(8);
                 }
                 .active {
                     color: #FFFFFF;
-                    background-color: #7A8B6C;
+                    background-color: orange;
                 }
             }
         }

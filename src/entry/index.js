@@ -8,6 +8,9 @@ const enterJs = {
   activity: path.resolve(__dirname, '../page/main/js/activity.js'),
   list: path.resolve(__dirname, '../page/main/js/list.js'),
   detail: path.resolve(__dirname, '../page/main/js/detail.js'),
+  cart: path.resolve(__dirname, '../page/main/js/cart.js'),
+  order: path.resolve(__dirname, '../page/main/js/order.js'),
+  game: path.resolve(__dirname, '../page/main/js/game.js'),
 };
 
 module.exports = enterJs;

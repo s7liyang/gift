@@ -30,11 +30,13 @@
       border-radius: 0.625rem;
       padding: 0 0.5rem;
       font-size: 0.8rem;
-      color: #fff;
       margin: 0.35rem 0.5rem;
-      background-color: #98FB98;
-      &:nth-child(2) {
+      a{color: #fff;}
+      &:nth-child(1) {
         background-color: #E94068;
+      }
+      &:nth-child(2) {
+        background-color: #FF7F50;
       }
       &:nth-child(3) {
         background-color: #EE85A5;
@@ -43,7 +45,7 @@
         background-color: #DDA0DD;
       }
       &:nth-child(5) {
-        background-color: #00ACFE;
+        background-color: #CC6600;
       }
       &:nth-child(6) {
         background-color: #C1C1C1;
@@ -61,13 +63,25 @@
         background-color: #D19275;
       }
       &:nth-child(11) {
-        background-color: #228B22;
+        background-color: #DAA520;
       }
       &:nth-child(12) {
         background-color: #FFD700;
       }
       &:nth-child(13) {
         background-color: #AFEEEE;
+      }
+      &:nth-child(14) {
+        background-color: #FFCC00;
+      }
+      &:nth-child(15) {
+        background-color: #FF3399;
+      }
+      &:nth-child(16) {
+        background-color: #993366;
+      }
+      &:nth-child(17) {
+        background-color: #6666FF;
       }
     }
   }

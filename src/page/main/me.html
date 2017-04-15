@@ -7,8 +7,6 @@
     <title>礼品屋</title>
     <link rel="stylesheet" href="/assert/css/common.css">
     <link rel="stylesheet" href="/assert/css/sm.min.css">
-    <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
-    <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assert/css/index.css">
 </head>
 
@@ -35,7 +33,7 @@
                     <span class="icon icon-cart"></span>
                     <span class="tab-label">购物车</span>
                 </a>
-                <a class="tab-item active" id="me" href="me.html" external data-no-cache="true">
+                <a class="tab-item active" href="me.html" external>
                     <span class="icon icon-me"></span>
                     <span class="tab-label">我的</span>
                 </a>
@@ -45,25 +43,25 @@
                 <!--头像昵称-->
                 <div class="topImage">
                     <div class="userImg">
-                        <div class="userImgInner"><img id="userimg" src="" alt=""></div>
+                        <div class="userImgInner"><img id="userimg" src=""></div>
                     </div>
                     <div class="userNick" id="userNick"></div>
                 </div>
                 <div class="tab">
                     <div class="first_tab">
-                        <a href="order.html">我的订单</a>
+                        <a href="order.html" external>我的订单</a>
                     </div>
                     <div class="middle_tab">
-                        <a href="user.html#page-purse">我的钱包</a>
+                        <a href="user.html#page-purse" external>我的钱包</a>
                     </div>
                     <div class="last_tab" id="signout">
-                        <a href="user.html#page-login">退出</a>
+                        <a href="user.html#page-login" external>退出</a>
                     </div>
                 </div>
                 <!--sui插件-->
                 <div class="list-block">
                     <ul>
-                        <a href="order.html#page-coupon">
+                        <a href="order.html#page-coupon" external>
                             <li class="item-content item-link">
                                 <div class="item-media"><i class="icon icon-f7"></i></div>
                                 <div class="item-inner">
@@ -79,7 +77,7 @@
                 <!--sui插件-->
                 <div class="list-block">
                     <ul>
-                        <a href="user.html#page-personalData">
+                        <a href="user.html#page-personalData" external>
                             <li class="item-content item-link">
                                 <div class="item-media"><i class="icon icon-f7"></i></div>
                                 <div class="item-inner">
@@ -88,7 +86,7 @@
                                 </div>
                             </li>
                         </a>
-                        <a href="user.html#page-newPassword">
+                        <a href="user.html#page-newPassword" external>
                             <li class="item-content item-link">
                                 <div class="item-media"><i class="icon icon-f7"></i></div>
                                 <div class="item-inner">
@@ -97,7 +95,7 @@
                                 </div>
                             </li>
                         </a>
-                        <a href="user.html#page-address">
+                        <a href="user.html#page-address" external>
                             <li class="item-content item-link">
                                 <div class="item-media"><i class="icon icon-f7"></i></div>
                                 <div class="item-inner">
@@ -145,7 +143,6 @@
                     <div class="feedback__phone">
                         <span class="feedback__phone--text">手机号</span>
                         <input class="feedback__input--text" type="text" name="phone" placeholder="请留下您的联系方式">
-                        <input type="text" id="feedback-userid" name="userid" style="display:none">
                     </div>
                     <span class="feedback--text">反馈内容</span>
                     <textarea class="feedback__content" name="txt" placeholder="请填写您宝贵的意见，我们将认真听取，及时改善"></textarea>
@@ -156,9 +153,6 @@
         </div>
         <script src="/assert/js/zepto.min.js"></script>
         <script src='/assert/js/sm.min.js'></script>
-        <script src='/assert/js/sm-extend.min.js'></script>
-        <script src='/assert/js/sm-city-picker.min.js'></script>
-        <script src="/assert/js/index.js"></script>
         <script src="/assert/js/me.js"></script>
 </body>
 </html>

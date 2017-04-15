@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="/assert/css/common.css">
     <link rel="stylesheet" href="/assert/css/sm.min.css">
     <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
-    <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assert/css/index.css">
 </head>
 <body>
     <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
-    <div class="page-group details-group">
+    <div class="page-group detail-group">
         <!-- 单个page ,第一个.page默认被展示-->
         <div class="page">
             <!-- 工具栏 -->
@@ -22,10 +21,10 @@
                     <svg>
                         <use xlink:href="/assert/svg-symbols.svg#car" />
                     </svg>
-                    <span class="cir">0</span>
+                    <span class="cir" id="cir">0</span>
                     <span class="span1">共计</span><span id="total">0</span><span class="span2">元</span>
                 </div>
-                <a class="center" href="" external>加入购物车</a>
+                <div class="center" id="product_add">加入购物车</div>
                 <a class="right" href="cart.html" external>选好了</a>
             </nav>
             <!-- 这里是页面内容区 -->
@@ -43,24 +42,24 @@
                     <!--swiper轮播页-->
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="#"><img src="" width="100%"></a>
+                           <img id="product_swiper1" src="" width="100%">
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="" width="100%"></a>
+                           <img id="product_swiper2" src="" width="100%">
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="" width="100%"></a>
+                           <img id="product_swiper3" src="" width="100%">
                         </div>
                     </div>
                     <!--分页器-->
                     <div class="swiper-pagination"></div>
                 </div>
-                <p class="biaoti">商品名称</p>
+                <p class="biaoti" id="product_pname">商品名称</p>
                 <p class="price">
                     <svg>
                         <use xlink:href="/assert/svg-symbols.svg#money" />
                     </svg>
-                    <span class="sp1">0.0</span>
+                    <span class="sp1" id="product_price">0.0</span>
                     <span class="sp2">爆款商品，赶快抢购！</span>
                 </p>
                 <div class="choose">
@@ -99,7 +98,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="pic">
+                <div class="pic" id="product_detail">
                    
                 </div>
                 <div class="pic">
@@ -116,8 +115,6 @@
     <script src="/assert/js/zepto.min.js"></script>
     <script src='/assert/js/sm.min.js'></script>
     <script src='/assert/js/sm-extend.min.js'></script>
-    <script src='/assert/js/sm-city-picker.min.js'></script>
-    <script src='/assert/js/index.js'></script>
     <script src='/assert/js/detail.js'></script>
 </body>
 </html>

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/assert/css/common.css">
     <link rel="stylesheet" href="/assert/css/sm.min.css">
     <link rel="stylesheet" href="/assert/css/sm-extend.min.css">
-    <link rel="stylesheet" href="/assert/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assert/css/index.css">
 </head>
 <body>
@@ -147,7 +146,7 @@
       <div class="page" id="page-newPassword">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -165,7 +164,7 @@
                         <div class="item-inner">
                             <div class="item-title label">修改密码</div>
                             <div class="item-input">
-                            <input type="password" placeholder="请输入新密码">
+                            <input type="password" placeholder="请输入新密码" id="newpassword1" value="">
                             </div>
                         </div>
                         </div>
@@ -176,7 +175,7 @@
                         <div class="item-inner">
                             <div class="item-title label">确认密码</div>
                             <div class="item-input">
-                            <input type="password" placeholder="再次输入新密码" class="">
+                            <input type="password" placeholder="再次输入新密码" id="newpassword2" value="">
                             </div>
                         </div>
                         </div>
@@ -185,7 +184,7 @@
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-100"><a href="#" class="button button-big button-fill button-danger">确 认 修 改</a></div>
+                    <div class="col-100"><a href="#" class="button button-big button-fill button-danger" id="updata-password">确 认 修 改</a></div>
                 </div>
             </div>
         </div>
@@ -194,7 +193,7 @@
       <div class="page" id="page-personalData">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -206,6 +205,7 @@
             <div class="list-block">
                 <ul>
                 <!-- Text inputs -->
+                <form id="form-user">
                 <li>
                     <div class="item-content">
                     <div class="item-media"><i class="icon icon-form-name"></i></div>
@@ -223,8 +223,9 @@
                     <div class="item-inner">
                         <div class="item-title label">头像</div>
                         <div class="item-input">
-                        <input type="file" id="userimg" name="userimg" value="">
+                        <input type="file" id="userimg" name="userimg"  value="点击上传图片"  multiple="multiple"/>
                         </div>
+                        <img id="xmTanImg"/>
                     </div>
                     </div>
                 </li>
@@ -287,12 +288,13 @@
                     </div>
                     </div>
                 </li>
+                </form>
                 </ul>
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger back">取消</a></div>
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+                    <div class="col-50"><a class="button button-big button-fill button-danger" href="me.html" external>取消</a></div>
+                    <div class="col-50"><a class="button button-big button-fill button-success" id="updata-user">提交</a></div>
                 </div>
             </div>
         </div>
@@ -301,7 +303,7 @@
       <div class="page" id="page-address">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
               <span class="icon icon-left" style="margin-top: -4px;"></span>
               返回
             </a>
@@ -313,6 +315,7 @@
             <div class="list-block">
                 <ul>
                 <!-- Text inputs -->
+                <form id="form-address">
                 <li>
                     <div class="item-content">
                     <div class="item-media"><i class="icon icon-form-name"></i></div>
@@ -368,12 +371,13 @@
                     </div>
                     </div>
                 </li>
+                </form>
                 </ul>
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+                    <div class="col-50"><a class="button button-big button-fill button-danger" href="me.html" external>取消</a></div>
+                    <div class="col-50"><a class="button button-big button-fill button-success" id="updata-address">提交</a></div>
                 </div>
             </div>
         </div>
@@ -382,7 +386,7 @@
       <div class="page" id="page-purse">
         <!-- 标题栏 -->
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back">
+            <a class="button button-link button-nav pull-left" href="me.html" external>
             <span class="icon icon-left" style="margin-top: -4px;"></span>
             返回
             </a>
@@ -406,7 +410,7 @@
                     <div class="item-inner">
                         <div class="item-title label">充值</div>
                         <div class="item-input">
-                        <input type="number" value="" placeholder="请输入充值金额">
+                        <input type="number" id="addmoney" value="" placeholder="请输入充值金额">
                         </div>
                     </div>
                     </div>
@@ -415,7 +419,7 @@
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-100"><a href="#" class="button button-big button-fill button-success">确认充值</a></div>
+                    <div class="col-100"><a class="button button-big button-fill button-success" id="updata-money">确认充值</a></div>
                 </div>
             </div>
         </div>
@@ -425,7 +429,6 @@
   <script src='/assert/js/sm.min.js'></script>
   <script src='/assert/js/sm-extend.min.js'></script>
   <script src='/assert/js/sm-city-picker.min.js'></script>
-  <script src='/assert/js/index.js'></script>
   <script src='/assert/js/user.js'></script>
 </body>
 </html>
