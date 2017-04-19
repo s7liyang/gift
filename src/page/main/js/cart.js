@@ -1,11 +1,36 @@
 /*-----------------1购物车数据加载------------------*/
-/**功能点1：检查用户是否已经登录，若没有，则跳转到登录页面**/
+/**功能点0：检查用户是否已经登录，若没有，则跳转到登录页面**/
 if(!localStorage['LoginName']){
   $.toast("请先登录");
   setTimeout(function(){
     location.href = 'user.html';
   },2000);
 }
+//定义全局变量  等会提交给服务器端的price, sumCount(商品数量)，userId
+var sumPrice = 0, 
+    sumCount = 0, 
+    factPrice = 0, 
+    couponid ='',
+    deletecid ='',
+    couponPrice = 0, 
+    product=[];
+
+/**功能点1：页面加载完后，异步请求当前登录用户的可以使用的最大优惠券**/
+$.ajax({  
+  type: 'GET',
+  url: '/data/24_coupon_use.php?userid=1',
+  data: {userid: 1},//localStorage['LoginUid']
+  success: function(data){
+    if (data[0]) {
+      // console.log(data[0].price);
+      couponid = parseInt(data[0].cid);
+      couponPrice = parseInt(data[0].price);
+    }
+  },
+  error: function(){
+    $.toast('异步请求用户资料失败！请检查Network！');
+  }
+});
 
 /**功能点2：页面加载完后，异步请求当前登录用户的购物车内容**/
 $.ajax({  
@@ -18,11 +43,10 @@ $.ajax({
     var html = '';
     $.each(list, function(i,p){
       html += `
-              <div class="list">
+              <div class="list" pid=${p.pid}>
                 <div class="listTop">
                     <div class="listTopRadio" radioGroup="0">
-                        <div class="listUnchecked">
-                        </div>
+                        <div class="listChecked"></div>
                     </div>
                     <div class="listTopDetail">
                         <div class="detailImg"><img src="${p.pic}" alt=""></div>
@@ -35,7 +59,7 @@ $.ajax({
                         </div>
                     </div>
                 </div>
-                <div class="listBottom">
+                <div class="listBottom" pid=${p.pid}>
                     <div class="listBottomTitle">数量：</div>
                     <div class="subtraction"><span>-</span></div>
                     <div class="selectNumber">${p.count}</div>
@@ -45,32 +69,41 @@ $.ajax({
     });
     $('#cart-list').html(html);
     main();
+    firsttotalMoney();
   }
 });
 
 /**功能点3：点击“结算”，更新数据到确认订单页面,**/
-var sumPrice, sumCount, factPrice;// 等会提交给服务器端的price, sumCount(商品数量)，userId
 $('#go2buy').click(function(){
-  //1购物车请求总的商品  价格 数量
-  sumPrice = 0;  
-  sumCount = 0;  
-  factPrice = 0;
-  $.ajax({  
-    type: 'GET',
-    url: '/data/6_cart_detail_select.php',
-    data: {uid: localStorage['LoginUid']},
-    success: function(list){
-        // console.log(list);
-        //遍历购物车中的每个商品，生成总数量和总价
-        $.each(list, function (i, p){
-            sumPrice += p.price * p.count; //商品总金额
-            sumCount += parseInt(p.count); //商品总数量
-        });
-        $('#sumCount').text(sumCount);
-        $('#sumPrice').text(sumPrice);
-        $('#factPrice').text(sumPrice);
-    }
-  })
+  //1订单信息展示
+  // $.ajax({  
+  //   type: 'GET',
+  //   url: '/data/6_cart_detail_select.php',
+  //   data: {uid: localStorage['LoginUid']},
+  //   success: function(list){
+  //       // console.log(list);
+  //       //遍历购物车中的每个商品，生成总数量和总价
+  //       $.each(list, function (i, p){
+  //           sumPrice += p.price * p.count; //商品总金额
+  //           sumCount += parseInt(p.count); //商品总数量
+  //       });
+  //       $('#sumCount').text(sumCount);
+  //       $('#sumPrice').text(sumPrice);
+  //       $('#factPrice').text(sumPrice);
+  //   }
+  // })
+  $('#sumCount').text(sumCount);
+  $('#sumPrice').text(sumPrice);
+  if (sumPrice>=100){
+    factPrice = sumPrice-couponPrice;
+    deletecid = couponid;
+    $('#couponPrice').text(couponPrice);
+  } else {
+    factPrice = sumPrice;
+    deletecid = '';
+    $('#couponPrice').text(0);
+  }
+  $('#factPrice').text(factPrice);
   //2地址请求 收货人 姓名 电话 邮编 地区 
   $.ajax({
     url: '/data/14_address.php',
@@ -88,29 +121,77 @@ $('#go2buy').click(function(){
   });
 });
 
-/**功能点4：点击“提交订单”，将数据提交给服务器端order表单**/
-// 提交给服务器端的price, sumCount(商品数量)，userId
-$('#confirm').click(function(){
-  var data = {price:sumPrice,sumCount:sumCount,userId:parseInt(localStorage['LoginUid'])};
-  console.log(data);
-  //异步提交用户输入/选中的数据,实现订单添加
+/**功能点4：为每个“数量添加和减少按钮”超链接绑定单击事件监听**/
+function countChange(pid,num){
+  console.log("数量变化");
+  //异步请求，实现添加到购物车
   $.ajax({
     type: 'POST',
-    url: '/data/8_order_add.php',
-    data: {price:sumPrice,sumCount:sumCount,userId:parseInt(localStorage['LoginUid'])},
+    url: '/data/22_product_count.php',
+    data: {uid: localStorage['LoginUid'], pid: pid, num:num},
     success: function(result){
-      if(result.code===1){  //订单生成成功
-        $.toast("订单生成成功");
-        localStorage['OrderId']=result.orderId;
-        location.href = 'order.html';
+      //////处理购物车添加结果//////
+      if(result.code===1){
+        // $.toast('更改数量成功！该商品数量：'+result.count);
       }else {
-        $.toast('订单生成失败！失败原因：'+result.msg);
+        // $.toast('更改数量失败！错误消息：'+result.msg);
       }
-    },
-    error: function(){
-      $.toast('异步提交订单数据失败！请检查Network！')
     }
-  })
+  });
+}
+
+/**功能点5：为每个“删除商品”超链接绑定单击事件监听**/
+function productDelete(pid){
+  console.log("删除商品");
+  //异步请求，实现添加到购物车
+  $.ajax({
+    type: 'POST',
+    url: '/data/23_product_delete.php',
+    data: {uid: localStorage['LoginUid'], pid: pid},
+    success: function(result){
+      //////处理购物车添加结果//////
+      if(result.code===1){
+        $.toast('删除商品成功！该商品：'+result.pid);
+      }else {
+        $.toast('删除商品失败！错误消息：'+result.msg);
+      }
+    }
+  });
+}
+
+/**功能点6：点击“提交订单”，将数据提交给服务器端order表单**/
+// 提交给服务器端的price, sumCount(商品数量)，userId
+$('#confirm').click(function(){
+  console.log(product);
+  var data = { price: factPrice,
+               sumCount: sumCount,
+               userId: parseInt(localStorage['LoginUid']),
+               productID: product.toString(),
+               couponid: deletecid
+              };
+  console.log(data);
+  if (sumCount==0) {
+    $.toast('你还没有选择商品，不能提交订单');
+  } else {
+    //异步提交用户输入/选中的数据,实现订单添加
+    $.ajax({
+      type: 'POST',
+      url: '/data/8_order_add.php',
+      data: data,
+      success: function(result){
+        if(result.code===1){  //订单生成成功
+          $.toast("订单生成成功");
+          localStorage['OrderId']=result.orderId;
+          location.href = 'order.html';
+        }else {
+          $.toast('订单生成失败！失败原因：'+result.msg);
+        }
+      },
+      error: function(){
+        $.toast('异步提交订单数据失败！请检查Network！')
+      }
+    })
+  }
 });
 
 /*----------------------2购物车方法---------------------*/
@@ -178,11 +259,14 @@ $("#allchoose").on("change",function(){
 
 //4减少商品数量  -1
 $('.subtraction').bind('click', function () { 
+  var mypid = parseInt($(this).parent().attr("pid"));
+  // console.log(mypid);
   var mynumber = parseInt($(this).siblings('.selectNumber').text());
   if (mynumber > 1) {
     mynumber--;
   }
   $(this).siblings('.selectNumber').text(mynumber);
+  countChange(mypid,mynumber);
   if ($(this).parents('.list').find('.listTopRadio>div').hasClass('listChecked')) {
       totalMoney();
     }
@@ -190,9 +274,11 @@ $('.subtraction').bind('click', function () {
 
 //5增加商品数量 +1
 $('.addition').bind('click', function () { 
+  var mypid = parseInt($(this).parent().attr("pid"));
   var mynumber = parseInt($(this).siblings('.selectNumber').text());
   mynumber++;
   $(this).siblings('.selectNumber').text(mynumber);
+  countChange(mypid,mynumber);
   if ($(this).parents('.list').find('.listTopRadio>div').hasClass('listChecked')) {
       totalMoney();
     }
@@ -200,17 +286,56 @@ $('.addition').bind('click', function () {
 
 //6计算总价格
 function totalMoney() { 
-  var total = 0;
+  var total = 0, allnum = 0, allpid = [];
   for (var i = 0; i < $('.list').length; i++) {
     if ($('.list').eq(i).find('.listTopRadio>div').hasClass('listChecked')) {
       var tempdom = $('.list').eq(i);
       var pricetemp = parseInt(tempdom.find('.listprice').text());
       var numbertemp = parseInt(tempdom.find('.selectNumber').text());
+      var pid = parseInt(tempdom.attr("pid"));
       total += pricetemp * numbertemp;
+      allnum += numbertemp;
+      allpid.push(pid);
     }
   }
+  sumPrice = total;
+  sumCount = allnum;
+  product = allpid;
   $('#totalmoney').text(total);
 }
 
+//7删除按钮
+$('#cancel').bind('click', function () {
+  var lists = $('.list');
+  for (var i = 0; i < lists.length; i++) {
+    // console.log(lists[i]);
+    if (lists.eq(i).find('.listTopRadio>div').hasClass('listChecked')){
+      lists.eq(i).remove();
+      console.log(parseInt(lists.eq(i).attr("pid")));
+      productDelete(parseInt(lists.eq(i).attr("pid")));
+    }
+  }
+  totalMoney();
+});
+
+}//main函数
+
+function firsttotalMoney() { 
+  var total = 0, allnum = 0, allpid = [];
+  for (var i = 0; i < $('.list').length; i++) {
+    if ($('.list').eq(i).find('.listTopRadio>div').hasClass('listChecked')) {
+      var tempdom = $('.list').eq(i);
+      var pricetemp = parseInt(tempdom.find('.listprice').text());
+      var numbertemp = parseInt(tempdom.find('.selectNumber').text());
+      var pid = parseInt(tempdom.attr("pid"));
+      total += pricetemp * numbertemp;
+      allnum += numbertemp;
+      allpid.push(pid);
+    }
+  }
+  sumPrice = total;
+  sumCount = allnum;
+  product = allpid;
+  $('#totalmoney').text(total);
 }
 

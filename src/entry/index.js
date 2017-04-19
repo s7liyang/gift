@@ -7,6 +7,7 @@ const enterJs = {
   user: path.resolve(__dirname, '../page/main/js/user.js'),
   activity: path.resolve(__dirname, '../page/main/js/activity.js'),
   list: path.resolve(__dirname, '../page/main/js/list.js'),
+  search: path.resolve(__dirname, '../page/main/js/search.js'),
   detail: path.resolve(__dirname, '../page/main/js/detail.js'),
   cart: path.resolve(__dirname, '../page/main/js/cart.js'),
   order: path.resolve(__dirname, '../page/main/js/order.js'),

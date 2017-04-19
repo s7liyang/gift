@@ -44,10 +44,10 @@
                 <div class="topH"></div>
                 <div class="top">
                     <label class="allchoosebox" id="selectAllButton">
-                <div class="allchooseimg" for="allchoose"></div>
-                <input type="checkbox" id="allchoose" value=""  style="visibility: hidden"> 全选
-                </label>
-                    <div class="cancel">删 除</div>
+                        <div class="allchooseimg active" for="allchoose"></div>
+                        <input type="checkbox" id="allchoose" value="" checked="checked"  style="visibility: hidden"> 全选
+                    </label>
+                    <div id="cancel">删 除</div>
                 </div>
                 <div id="cart-list">
                     <!--1件商品list-->
@@ -113,7 +113,7 @@
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
                                 <div class="item-title">优惠券</div>
-                                <div class="item-after">-0</div>
+                                <div class="item-after">-<span id="couponPrice"></span></div>
                             </div>
                         </li>
                         <li class="item-content">

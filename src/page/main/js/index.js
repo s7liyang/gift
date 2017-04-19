@@ -33,6 +33,6 @@ $("#go2search").on("click",function(){
   var key = $("#search").val()
   console.log(key);
   if(key){
-    location.href = `list.html?key=${key}`;
+    location.href = `search.html?key=${key}`;
   }
 });

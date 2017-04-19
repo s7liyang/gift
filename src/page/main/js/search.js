@@ -1,8 +1,8 @@
 //点击搜索按钮
 $("#go2search").on("click",function(){
   var key = $("#search").val()
-  console.log(key);
   if(key){
+    console.log(key);
     location.href = `search.html?key=${key}`;
   }
 });
@@ -21,13 +21,13 @@ if (url.indexOf("?") != -1) {
 $('#listTitle').text(decodeURI(theRequest.key));
 
 /**功能点1：当页面加载完后，异步请求产品列表**/
-loadProductByPage(1);
+loadProductByPage(1,decodeURI(theRequest.key));
 //异步请求商品数据(分页)，修改商品列表，修改分页条内容
-function loadProductByPage(pageNum){
+function loadProductByPage(pageNum,key){
   $.ajax({
     type: 'GET',
-    url: '/data/4_product_list.php',
-    data: {pageNum: pageNum},
+    url: '/data/21_product_search.php',
+    data: {pageNum: pageNum,key:key},
     success: function(pager){ //服务器返回分页对象
       //遍历分页对象中的产品数据
       console.log(pager);
@@ -57,6 +57,9 @@ function loadProductByPage(pageNum){
           $(n).remove();
         }
       });
+      if(pager.recordCount==0) {
+         $('#pager').html("没有找到与"+"\“ "+key+" \”"+"相关的商品。。。");
+      }
     },
     error: function(){
       $.toast('产品列表响应完成,出现问题');

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>礼品屋</title>
+    <link rel="stylesheet" href="/assert/css/common.css">
+    <link rel="stylesheet" href="/assert/css/sm.min.css">
+    <link rel="stylesheet" href="/assert/css/index.css">
+</head>
+<body>
+  <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+  <div class="page-group list-group">
+      <!-- 单个page ,第一个.page默认被展示-->
+      <div class="page">
+          <!-- 标题栏 -->
+          <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left back">
+                <span class="icon icon-left" style="margin-top: -4px;"></span>
+                返回
+              </a>
+              <h1 class="title" id="listTitle"></h1>
+          </header>
+          <!-- 这里是页面内容区 -->
+          <div class="content">
+            <div class="content-padded">
+              <!--搜索栏-->
+              <div class="searchbar row">
+                <div class="search-input col-85">
+                  <input type="search" id='search' value="" placeholder='输入关键字...'/>
+                </div>
+                <a id="go2search" class="button button-fill button-primary col-15"><span class="icon icon-search"></span></a>
+              </div>
+            </div>
+            <div class="list" id="product-list">
+                <!--<a href="details.html" external>
+                    <img src="/assert/img/product5.jpg" alt="">
+                    <p class="name">酷玩音乐台灯</p>
+                    <p class="price">￥79.00</p>
+                </a>-->
+            </div>
+            <div class="pager"  id="pager">
+                <!--<div>1</div>
+                <div>2</div>
+                <div class="active">3</div>
+                <div>4</div>
+                <div>5</div>-->
+            </ul>
+          </div>
+      </div>
+  </div>
+  <script src="/assert/js/zepto.min.js"></script>
+  <script src='/assert/js/sm.min.js'></script>
+  <script src="/assert/js/search.js"></script>
+</body>
+</html>
