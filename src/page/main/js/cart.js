@@ -19,7 +19,7 @@ var sumPrice = 0,
 $.ajax({  
   type: 'GET',
   url: '/data/24_coupon_use.php?userid=1',
-  data: {userid: 1},//localStorage['LoginUid']
+  data: {userid: localStorage['LoginUid']},//localStorage['LoginUid']
   success: function(data){
     if (data[0]) {
       // console.log(data[0].price);
